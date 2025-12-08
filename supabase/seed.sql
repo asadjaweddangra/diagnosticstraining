@@ -10,15 +10,17 @@ values
       {"left":"Ultrasound = bat echolocation for the body","right":"2–15 MHz sound waves creating images via acoustic reflection"},
       {"left":"Echo = live movie of the heart","right":"Cardiac ultrasonography evaluating structure and hemodynamics"},
       {"left":"EKG = electrical recording of heartbeats","right":"Surface electrodes record depolarization/repolarization patterns"}
-    ]},
+    ],"body":"Start with relatable language, then tie to the formal definition so trainees can translate between patient-friendly explanations and clinical terms."},
     {"type":"mnemonic","title":"Your role","content":"Acquire + optimize images; document technically; never diagnose.","hint":"You are the eyes and hands for the clinician."},
-    {"type":"alert","variant":"danger","title":"STOP / Escalate Immediately","items":["Severe pain or distress","Allergic reaction to gel/electrodes","Equipment malfunction affecting safety","Unstable rhythm (VF/VT/asystole)"]}
+    {"type":"alert","variant":"danger","title":"STOP / Escalate Immediately","items":["Severe pain or distress","Allergic reaction to gel/electrodes","Equipment malfunction affecting safety","Unstable rhythm (VF/VT/asystole)"]},
+    {"type":"list","title":"Scope boundaries","body":"You capture data; the clinician interprets. When in doubt, escalate instead of interpreting.","items":["Acquire images/data and optimize quality","Document technical quality and limitations","Do not diagnose or reassure beyond your scope"]}
   ]}',1,30,'common'),
 ('c1000000-0000-0000-0000-000000000002','Safety & Infection Control','ALARA, probe disinfection, electrical safety', '{
   "sections":[
     {"type":"mnemonic","title":"ALARA","content":"As Low As Reasonably Achievable","hint":"Lowest power + minimal dwell time for diagnostic images."},
     {"type":"steps","title":"Probe Disinfection Steps","steps":["Remove gel with approved wipes","Apply disinfectant and respect contact time","Air dry completely before next patient","High-level disinfection for TEE/TV/mucosal probes"],"footnote":"Follow facility and manufacturer policies."},
-    {"type":"checklist","title":"Electrical Safety Quick Check","items":["Inspect cables for damage","Verify proper grounding","Avoid wet environments","Replace damaged electrodes/cables immediately"]}
+    {"type":"checklist","title":"Electrical Safety Quick Check","items":["Inspect cables for damage","Verify proper grounding","Avoid wet environments","Replace damaged electrodes/cables immediately"]},
+    {"type":"list","title":"References","links":[{"label":"CDC High-Level Disinfection","href":"https://www.cdc.gov/infectioncontrol/guidelines/disinfection/index.html"},{"label":"AIUM ALARA overview","href":"https://www.aium.org/resources/viewPage.aspx?id=130"}]}
   ]}',2,25,'common'),
 ('c1000000-0000-0000-0000-000000000003','Pre-Exam Workflow & Documentation','Orders, ID, room setup, device self-test, doc traps', '{
   "sections":[
@@ -28,7 +30,8 @@ values
       {"left":"Describe technical quality and views obtained","right":"Diagnostic language or interpretation"},
       {"left":"State limitations (habitus, gas, cooperation)","right":"Leaving limitations unstated"},
       {"left":"Record patient tolerance and safety events","right":"Speculating on diagnoses"}
-    ]}
+    ]},
+    {"type":"alert","variant":"warning","title":"Common pitfalls","items":["Skipping ID check under time pressure","Not documenting limitations","Using diagnostic phrasing"]}
   ]}',3,25,'common'),
 ('c1000000-0000-0000-0000-000000000004','Patient Interaction & Scripts','Consent, dignity, explanations, breath-hold coaching', '{
   "sections":[
@@ -38,7 +41,8 @@ values
       {"speaker":"Tech","line":"If anything feels uncomfortable, tell me and I''ll pause."}
     ]},
     {"type":"steps","title":"Breath-Hold Coaching","steps":["Practice once before scanning: ''Take a breath in... hold... breathe normally.''","Cue short breath-hold 5–10 seconds during imaging","If struggling: reassure and work with normal breathing"]},
-    {"type":"alert","variant":"warning","title":"De-escalation for Anxiety","items":["Acknowledge feelings; explain safety","Offer chaperone/family if appropriate","Pause or reschedule if distress persists"]}
+    {"type":"alert","variant":"warning","title":"De-escalation for Anxiety","items":["Acknowledge feelings; explain safety","Offer chaperone/family if appropriate","Pause or reschedule if distress persists"]},
+    {"type":"list","title":"STOP / ESCALATE","items":["Severe pain on probe pressure","Respiratory distress","Refusal or withdrawal of consent"]}
   ]}',4,20,'common'),
 
 -- Ultrasound track
@@ -50,12 +54,14 @@ values
       {"left":"Superficial (thyroid, vessels)","right":"Deep abdomen/heart"},
       {"left":"Limited depth","right":"Wider usable depth"}
     ]},
-    {"type":"alert","variant":"info","title":"Artifacts to Recognize","items":["Shadowing: stones/bone","Posterior enhancement: fluid","Reverberation/mirror","Side lobes mimicking echoes"]}
+    {"type":"alert","variant":"info","title":"Artifacts to Recognize","items":["Shadowing: stones/bone","Posterior enhancement: fluid","Reverberation/mirror","Side lobes mimicking echoes"]},
+    {"type":"list","title":"Quick optimization order","body":"Depth → Gain → TGC → Focus → Frequency. Change one major control at a time so you see the effect."}
   ]}',1,30,'ultrasound'),
 ('a2000000-0000-0000-0000-000000000002','Core Anatomy - Abdomen','Liver/GB, IVC vs Aorta cues, kidneys', '{
   "sections":[
     {"type":"anatomy","title":"Key Landmarks","image":"https://www.bartleby.com/107/illus492.jpg","caption":"Gray''s Anatomy abdominal organs (public domain)","markers":[{"label":"Liver","detail":"Largest solid organ, right upper quadrant"},{"label":"Gallbladder","detail":"Under liver, mobile, fluid-filled"},{"label":"IVC vs Aorta","detail":"IVC compressible; aorta pulsatile"}]},
-    {"type":"list","title":"Landmark Cues","items":["Liver in RUQ; gallbladder under liver (mobile)","IVC is compressible; aorta pulsatile and non-compressible","Kidneys retroperitoneal; cortex vs medulla differentiation"]}
+    {"type":"list","title":"Landmark Cues","items":["Liver in RUQ; gallbladder under liver (mobile)","IVC is compressible; aorta pulsatile and non-compressible","Kidneys retroperitoneal; cortex vs medulla differentiation"]},
+    {"type":"list","title":"What beginners miss","items":["IVC vs aorta: look for compressibility and pulsatility","Gallbladder drifts with position—reposition to find it","Kidney cortex should be brighter than medulla"]}
   ]}',2,25,'ultrasound'),
 ('a2000000-0000-0000-0000-000000000003','Scanning Fundamentals & Artifacts','Orientation, sweep patterns, optimization ladder', '{
   "sections":[
@@ -68,24 +74,28 @@ values
       {"label":"Focus/Frequency"},
       {"label":"Change window"},
       {"label":"Document limitation"}
-    ]}
+    ]},
+    {"type":"list","title":"Gel & Contact","body":"Warm gel improves patient comfort and contact; generous gel reduces rib artifact."}
   ]}',3,30,'ultrasound'),
 ('a2000000-0000-0000-0000-000000000004','Abdomen/Gallbladder Protocol','RUQ protocol, CBD, mobility, shadowing', '{
   "sections":[
     {"type":"steps","title":"Acquisition Steps","steps":["GB long & short; assess wall/lumen","CBD view; measure if indicated; add color if needed","Survey adjacent liver parenchyma"]},
     {"type":"checklist","title":"Tips & Maneuvers","items":["Left lateral decubitus to move stones/gas","Deep inspiration to drop liver/GB","Heel-toe to avoid ribs; add gel for contact"]},
-    {"type":"alert","variant":"info","title":"Artifact Clues","items":["Shadowing confirms stones","Posterior enhancement supports fluid-filled lumen"]}
+    {"type":"alert","variant":"info","title":"Artifact Clues","items":["Shadowing confirms stones","Posterior enhancement supports fluid-filled lumen"]},
+    {"type":"list","title":"Escalate","items":["Severe RUQ pain on probe pressure","Findings limited despite optimization—document clearly"]}
   ]}',4,25,'ultrasound'),
 ('a2000000-0000-0000-0000-000000000005','Renal/Bladder Protocol','Kidneys in 2 planes, bladder volume, hydronephrosis', '{
   "sections":[
     {"type":"steps","title":"Kidney Protocol","steps":["Long and short axis both kidneys; include cortex/medulla","Measure length if indicated; evaluate hydronephrosis","Decubitus or prone if needed for windows"]},
     {"type":"checklist","title":"Bladder Protocol","items":["Transverse and sagittal views","Posterior enhancement expected","Post-void if ordered; note debris/clots"]},
-    {"type":"mnemonic","title":"Full bladder helps","content":"Full bladder improves pelvic/ureteral visualization."}
+    {"type":"mnemonic","title":"Full bladder helps","content":"Full bladder improves pelvic/ureteral visualization."},
+    {"type":"list","title":"Hydronephrosis grading (tech cues)","items":["Mild: Pelviectasis only","Moderate: Calyceal dilation","Severe: Cortical thinning—escalate"]}
   ]}',5,20,'ultrasound'),
 ('a2000000-0000-0000-0000-000000000006','Thyroid & Superficial','High-frequency linear, small movements, vessels/structures', '{
   "sections":[
     {"type":"steps","title":"Technique Essentials","steps":["High-frequency linear probe; light pressure","Small sweeps; keep probe steady","Use color to map vascularity; identify lobes and isthmus"]},
-    {"type":"alert","variant":"info","title":"Safety","items":["Monitor patient comfort with neck extension","Document any limitations (body habitus, motion)"]}
+    {"type":"alert","variant":"info","title":"Safety","items":["Monitor patient comfort with neck extension","Document any limitations (body habitus, motion)"]},
+    {"type":"list","title":"Views required","items":["Long and transverse each lobe","Isthmus midline","Survey for nodules; note vascularity (color)"]}
   ]}',6,20,'ultrasound'),
 ('a2000000-0000-0000-0000-000000000007','Vascular Access Guidance','Identify artery vs vein, compressibility, needle path', '{
   "sections":[
@@ -95,7 +105,8 @@ values
       {"left":"Thin wall","right":"Thicker wall"}
     ]},
     {"type":"steps","title":"Approach Planning","steps":["Confirm depth and vessel diameter","Choose in-plane vs out-of-plane approach","Maintain sterile technique; visualize needle tip"],"footnote":"Document vessel, depth, and approach."},
-    {"type":"alert","variant":"warning","title":"Safety","items":["Do not proceed if vessel identity uncertain","Abort if patient reports severe pain"]}
+    {"type":"alert","variant":"warning","title":"Safety","items":["Do not proceed if vessel identity uncertain","Abort if patient reports severe pain"]},
+    {"type":"list","title":"Needle visualization tips","items":["Use in-plane for continuous needle visualization","Shallow angle improves visualization but increases path length","Always visualize tip before advancing"]}
   ]}',7,15,'ultrasound'),
 ('a2000000-0000-0000-0000-000000000008','Ultrasound Troubleshooting','Poor images due to gas, habitus; optimization ladder', '{
   "sections":[
@@ -107,7 +118,8 @@ values
       {"label":"Change window/intercostal"},
       {"label":"Document limitation (habitus/gas/cooperation)"}
     ]},
-    {"type":"alert","variant":"info","title":"Document Limits","items":["Body habitus","Bowel gas","Patient cooperation","Rib shadowing"]}
+    {"type":"alert","variant":"info","title":"Document Limits","items":["Body habitus","Bowel gas","Patient cooperation","Rib shadowing"]},
+    {"type":"list","title":"Obesity/COPD specifics","items":["Try subcostal for RUQ/IVC","Use lower frequency or harmonics","Sit patient up if tolerated"]}
   ]}',8,15,'ultrasound'),
 
 -- Echo track
@@ -124,7 +136,8 @@ values
     {"type":"comparison","title":"Looks Right vs Off","leftLabel":"Looks Right","rightLabel":"Common Miss","rows":[
       {"left":"RV anterior, LV/LA visible, Ao root centered","right":"Foreshortened LV or off-axis root"},
       {"left":"Pericardium as bright line","right":"Poor contact or rib shadowing"}
-    ]}
+    ]},
+    {"type":"alert","variant":"info","title":"Common fixes","items":["Move up/down one interspace","Increase contact/gel to reduce rib shadow","Fine heel-toe to center LV"]}
   ]}',2,25,'echo'),
 ('e3000000-0000-0000-0000-000000000003','Apical Views (4/2/3)','Apex find, avoid foreshortening, chamber layout', '{
   "sections":[
@@ -189,7 +202,8 @@ values
 ('b4000000-0000-0000-0000-000000000004','Rhythm Strip & Escalation','Lead II strip, dangerous rhythms to escalate', '{
   "sections":[
     {"type":"steps","title":"Lead II Rhythm Strip","steps":["Record 6–10 seconds minimum","Assess P-QRS-T, rate, rhythm regularity","Ensure clear baseline"]},
-    {"type":"alert","variant":"danger","title":"Escalate Immediately","items":["VF/VT","Asystole","Complete heart block with symptoms"]}
+    {"type":"alert","variant":"danger","title":"Escalate Immediately","items":["VF/VT","Asystole","Complete heart block with symptoms"]},
+    {"type":"list","title":"Documentation","items":["Note electrode placement (limb vs torso)","Note artifacts if present","Notify clinician immediately for dangerous rhythms"]}
   ]}',4,15,'ekg')
 on conflict (id) do nothing;
 
