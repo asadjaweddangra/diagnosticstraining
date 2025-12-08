@@ -131,7 +131,8 @@ values
   "sections":[
     {"title":"Rhythm strip","items":["Lead II 6-10s","Check P-QRS-T","Rate/rhythm regularity"]},
     {"title":"Escalate immediately","items":["VF/VT","Asystole","Complete heart block with symptoms"]}]
-  }',4,15,'ekg');
+  }',4,15,'ekg')
+on conflict (id) do nothing;
 
 -- Quizzes (sample: micro + comprehensive)
 insert into quizzes (id, module_id, title, type, passing_score, time_limit, max_attempts, questions)
@@ -166,7 +167,8 @@ values
     {"id":"q25","type":"multiple_choice","question":"60-cycle interference first fix:","options":["Replace electrodes","Remove nearby electrical devices","Move rooms","Add gel"],"answer":"Remove nearby electrical devices","rationale":"Eliminate external electrical noise first."},
     {"id":"q30","type":"multiple_choice","question":"Good PLAX view shows:","options":["All 4 chambers","RV, LV, LA, aortic root","Left heart only","Valves in cross-section"],"answer":"RV, LV, LA, aortic root","rationale":"Standard PLAX contents."},
     {"id":"q36","type":"multiple_choice","question":"Normal IVC collapse with inspiration:","options":["25%","50%","75%","90%"],"answer":"50%","rationale":">50% collapse is normal filling pressures."}
-  ]'::jsonb);
+  ]'::jsonb)
+on conflict (id) do nothing;
 
 -- Competency requirements
 insert into competency_requirements (id, name, description, modality, supervised_count, independent_count, skills_checklist)
@@ -178,5 +180,6 @@ values
 ('d5555555-5555-5555-5555-555555555555','Echo Standard Views','All core echo windows','echo',30,0,'["PLAX","PSAX levels","Apical 4/2/3","Subcostal 4ch","IVC"]'::jsonb),
 ('d6666666-6666-6666-6666-666666666666','Focused Cardiac Assessment','Focused POCUS cardiac','echo',20,0,'["Global function impression","Pericardial effusion screen","IVC collapsibility"]'::jsonb),
 ('d7777777-7777-7777-7777-777777777777','EKG 12-Lead Acquisition','Standard 12-lead acquisition','ekg',50,0,'["Limb leads correct","V1-V6 placement","Artifact troubleshooting","Rhythm strip protocol"]'::jsonb),
-('d8888888-8888-8888-8888-888888888888','Rhythm Recognition (Escalation)','Recognize dangerous rhythms for escalation','ekg',25,0,'["VF/VT recognition","Complete heart block recognition","Escalation steps"]'::jsonb);
+('d8888888-8888-8888-8888-888888888888','Rhythm Recognition (Escalation)','Recognize dangerous rhythms for escalation','ekg',25,0,'["VF/VT recognition","Complete heart block recognition","Escalation steps"]'::jsonb)
+on conflict (id) do nothing;
 
