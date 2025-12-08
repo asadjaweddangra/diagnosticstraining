@@ -12,6 +12,7 @@ import {
   Settings,
   LogOut,
   Activity,
+  Layers,
 } from "lucide-react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
@@ -20,7 +21,8 @@ const links = [
   { href: "/modules", label: "Modules", icon: Library },
   { href: "/quizzes", label: "Quizzes", icon: ClipboardCheck },
   { href: "/progress", label: "Progress", icon: BarChart3 },
-   { href: "/analytics", label: "Analytics", icon: Activity },
+  { href: "/flashcards", label: "Flashcards", icon: Layers },
+  { href: "/analytics", label: "Analytics", icon: Activity },
   { href: "/competency", label: "Competency", icon: BookOpen },
   { href: "/settings", label: "Settings", icon: Settings },
 ];

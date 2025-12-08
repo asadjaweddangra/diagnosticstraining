@@ -34,5 +34,5 @@ export const flashcards = {
     { front: "Documentation rule for techs?", back: "Document technical quality/limitations, avoid diagnostic language." },
     { front: "Two required identifiers before any exam?", back: "Name and DOB (or MRN) – never room number or age." },
   ],
-};
+} as const;
 
