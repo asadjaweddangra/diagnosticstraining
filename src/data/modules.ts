@@ -5,37 +5,34 @@ export const staticModules: Module[] = [
   {
     id: "c1000000-0000-0000-0000-000000000001",
     title: "Orientation & Fundamentals",
-    description:
-      "Plain-English definitions of ultrasound, echo, EKG; scope of practice; safety signals.",
+    description: "Plain-English basics, scope of practice, safety signals and escalation.",
     modality: "common",
     order_index: 1,
     estimated_duration: 30,
     content: {
       sections: [
         {
-          title: "Plain English definitions",
-          items: [
-            "Ultrasound = sound waves imaging (no radiation).",
-            "Echo = ultrasound focused on the heart (structure + flow).",
-            "EKG = electrical recording of the heart’s rhythm.",
+          type: "comparison",
+          title: "Plain English vs Technical Definitions",
+          leftLabel: "Plain",
+          rightLabel: "Technical",
+          rows: [
+            { left: "Ultrasound = bat echolocation for the body", right: "2–15 MHz sound waves creating images via acoustic reflection" },
+            { left: "Echo = live movie of the heart", right: "Cardiac ultrasonography evaluating structure and hemodynamics" },
+            { left: "EKG = electrical recording of heartbeats", right: "Surface electrodes record depolarization/repolarization patterns" },
           ],
         },
         {
-          title: "Role vs interpretation",
-          items: [
-            "Acquire images/data and optimize quality.",
-            "Document technical quality and limitations; do not diagnose.",
-            "Escalate safety concerns immediately.",
-          ],
+          type: "mnemonic",
+          title: "Your role",
+          content: "Acquire + optimize images; document technically; never diagnose.",
+          hint: "You are the eyes and hands for the clinician.",
         },
         {
-          title: "Safety signals (STOP / escalate)",
-          items: [
-            "Severe pain or distress during exam.",
-            "Allergic reaction to gel/electrodes.",
-            "Equipment malfunction affecting safety.",
-            "Unstable rhythm seen on monitor.",
-          ],
+          type: "alert",
+          variant: "danger",
+          title: "STOP / Escalate Immediately",
+          items: ["Severe pain or distress", "Allergic reaction to gel/electrodes", "Equipment malfunction affecting safety", "Unstable rhythm (VF/VT/asystole)"],
         },
       ],
     },
@@ -43,38 +40,33 @@ export const staticModules: Module[] = [
   {
     id: "c1000000-0000-0000-0000-000000000002",
     title: "Safety & Infection Control",
-    description:
-      "ALARA, probe disinfection, electrical safety; practical checklists.",
+    description: "ALARA, probe disinfection, electrical safety, and daily checklists.",
     modality: "common",
     order_index: 2,
     estimated_duration: 25,
     content: {
       sections: [
         {
-          title: "ALARA in practice",
-          items: [
-            "Minimize dwell time; only as long as needed.",
-            "Lowest power/output that yields diagnostic image.",
-            "Avoid prolonged scanning over fetal tissue or eyes.",
-          ],
-          callout: "ALARA = As Low As Reasonably Achievable.",
+          type: "mnemonic",
+          title: "ALARA",
+          content: "As Low As Reasonably Achievable",
+          hint: "Lowest power + minimal dwell time for diagnostic images.",
         },
         {
-          title: "Probe disinfection",
-          items: [
+          type: "steps",
+          title: "Probe Disinfection Steps",
+          steps: [
             "Remove gel with approved wipes.",
-            "Respect contact time per manufacturer.",
-            "Air dry fully before reuse.",
-            "High-level disinfection for TEE/TV and mucosal probes.",
+            "Apply disinfectant and respect contact time.",
+            "Air dry completely before next patient.",
+            "High-level disinfection for TEE/TV/mucosal probes.",
           ],
+          footnote: "Follow facility and manufacturer policies.",
         },
         {
-          title: "Electrical safety",
-          items: [
-            "Inspect cables for damage each use.",
-            "Ensure proper grounding; avoid wet environments.",
-            "Replace damaged electrodes/cables immediately.",
-          ],
+          type: "checklist",
+          title: "Electrical Safety Quick Check",
+          items: ["Inspect cables for damage", "Verify proper grounding", "Avoid wet environments", "Replace damaged electrodes/cables immediately"],
         },
       ],
     },
@@ -82,35 +74,39 @@ export const staticModules: Module[] = [
   {
     id: "c1000000-0000-0000-0000-000000000003",
     title: "Pre-Exam Workflow & Documentation",
-    description:
-      "Orders, two-identifier ID, room/supply setup, device self-test, documentation traps.",
+    description: "Orders, ID, room setup, device self-test, and documentation traps.",
     modality: "common",
     order_index: 3,
     estimated_duration: 25,
     content: {
       sections: [
         {
-          title: "Verify orders & ID",
-          items: [
-            "Two identifiers: name + DOB/MRN.",
-            "Confirm exam type matches order; note indication.",
+          type: "steps",
+          title: "Two-Identifier Verification",
+          steps: [
+            "Ask for full name and DOB (or MRN if unable to speak).",
+            "Confirm exam type matches the order.",
             "Review allergies and prior studies if available.",
           ],
         },
         {
-          title: "Room & supplies",
+          type: "checklist",
+          title: "Room & Supplies Ready",
           items: [
-            "Gloves, wipes, gel, probe covers/electrodes/razors.",
-            "Lighting and privacy; emergency call button accessible.",
-            "Paper/thermal paper and calibration checks for EKG.",
+            "Gloves, wipes, gel, probe covers/electrodes/razors",
+            "Lighting and privacy, emergency call button accessible",
+            "Paper/thermal paper loaded; calibration check (EKG)",
           ],
         },
         {
-          title: "Documentation traps (avoid diagnostic language)",
-          items: [
-            "Document views obtained and technical limitations.",
-            "Note patient tolerance and cooperation.",
-            "Avoid interpretations; use technical descriptors only.",
+          type: "comparison",
+          title: "Documentation Traps (Do / Avoid)",
+          leftLabel: "Do",
+          rightLabel: "Avoid",
+          rows: [
+            { left: "Describe technical quality and views obtained", right: "Diagnostic language or clinical interpretation" },
+            { left: "Note limitations (habitus, gas, cooperation)", right: "Leaving limitations unstated" },
+            { left: "Record patient tolerance and safety events", right: "Speculating on diagnoses" },
           ],
         },
       ],
@@ -119,28 +115,35 @@ export const staticModules: Module[] = [
   {
     id: "c1000000-0000-0000-0000-000000000004",
     title: "Patient Interaction & Scripts",
-    description:
-      "Consent, dignity, simple explanations, breath-hold coaching, escalation.",
+    description: "Consent, dignity, plain-language explanations, and coaching.",
     modality: "common",
     order_index: 4,
     estimated_duration: 20,
     content: {
       sections: [
         {
-          title: "Starter scripts",
-          items: [
-            "Introduce and verify ID: name + DOB.",
-            "Explain exam simply (sound waves / stickers) and what to expect.",
-            "Offer chaperone/draping; pause if distressed.",
+          type: "script",
+          title: "Starter Scripts",
+          script: [
+            { speaker: "Tech", line: "Hello, I'm [Name]. I’ll perform your ultrasound/EKG. Please confirm your name and date of birth." },
+            { speaker: "Tech", line: "This uses sound waves/stickers to capture images. It shouldn’t hurt; you might feel some pressure." },
+            { speaker: "Tech", line: "If anything feels uncomfortable, tell me and I’ll pause." },
           ],
         },
         {
-          title: "Coaching",
-          items: [
-            "Practice breath-holds before scanning.",
-            "Explain pressure vs pain; invite feedback.",
-            "For anxious patients: reassure, narrate steps, keep exposure minimal.",
+          type: "steps",
+          title: "Breath-Hold Coaching",
+          steps: [
+            "Practice once before scanning: 'Take a breath in... hold... breathe normally.'",
+            "During imaging: cue a short breath-hold for 5–10 seconds.",
+            "If struggling: reassure and work with normal breathing.",
           ],
+        },
+        {
+          type: "alert",
+          variant: "warning",
+          title: "De-escalation for Anxiety",
+          items: ["Acknowledge feelings; explain safety", "Offer chaperone/family present if appropriate", "Pause or reschedule if distress persists"],
         },
       ],
     },
@@ -150,28 +153,39 @@ export const staticModules: Module[] = [
   {
     id: "a2000000-0000-0000-0000-000000000001",
     title: "Ultrasound Physics & Controls",
-    description:
-      "Depth, gain, TGC, focus, frequency trade-offs; artifacts recognition.",
+    description: "Depth, gain, TGC, focus, frequency trade-offs; core artifacts.",
     modality: "ultrasound",
     order_index: 1,
     estimated_duration: 30,
     content: {
       sections: [
         {
-          title: "Control sequence",
-          items: [
-            "Depth first to frame target with 1–2 cm beyond.",
+          type: "steps",
+          title: "Control Sequence",
+          steps: [
+            "Depth first: frame target with 1–2 cm beyond.",
             "Overall gain, then TGC for depth-specific brightness.",
             "Focus at/just below structure of interest.",
             "Frequency: higher = resolution, lower = penetration.",
           ],
+          footnote: "Optimize in this order before moving on.",
         },
         {
-          title: "Common artifacts",
-          items: [
-            "Shadowing: stones/bone; posterior enhancement: fluid.",
-            "Reverberation/mirror; side lobes mimicking echoes.",
+          type: "comparison",
+          title: "Frequency Trade-off",
+          leftLabel: "Higher Frequency",
+          rightLabel: "Lower Frequency",
+          rows: [
+            { left: "Better resolution", right: "Better penetration" },
+            { left: "Superficial (thyroid, vessels)", right: "Deep abdomen/heart" },
+            { left: "Limited depth", right: "Wider usable depth" },
           ],
+        },
+        {
+          type: "alert",
+          variant: "info",
+          title: "Artifacts to Recognize",
+          items: ["Shadowing: stones/bone", "Posterior enhancement: fluid", "Reverberation/mirror", "Side lobes mimicking echoes"],
         },
       ],
     },
@@ -179,22 +193,69 @@ export const staticModules: Module[] = [
   {
     id: "a2000000-0000-0000-0000-000000000002",
     title: "Abdominal Core Anatomy",
-    description:
-      "Liver/GB, IVC vs Aorta cues, kidney landmarks with real images.",
+    description: "Liver/GB, IVC vs aorta, kidney landmarks with real images.",
     modality: "ultrasound",
     order_index: 2,
     estimated_duration: 25,
     content: {
       sections: [
         {
-          title: "Landmarks",
-          items: [
-            "Liver RUQ; GB under liver; IVC compressible vs aorta pulsatile.",
-            "Kidneys retroperitoneal, cortex vs medulla visualization.",
+          type: "anatomy",
+          title: "Key Landmarks",
+          image: "https://www.bartleby.com/107/illus492.jpg",
+          caption: "Gray’s Anatomy abdominal organs (public domain)",
+          markers: [
+            { label: "Liver", detail: "Largest solid organ, right upper quadrant" },
+            { label: "Gallbladder", detail: "Under liver, mobile, fluid-filled" },
+            { label: "IVC vs Aorta", detail: "IVC compressible; aorta pulsatile" },
           ],
-          image:
-            "https://www.bartleby.com/107/illus492.jpg",
-          caption: "Gray’s Anatomy abdominal organs (public domain).",
+        },
+        {
+          type: "list",
+          title: "Landmark Cues",
+          items: [
+            "Liver in RUQ; gallbladder under liver (mobile).",
+            "IVC is compressible; aorta pulsatile and non-compressible.",
+            "Kidneys retroperitoneal; cortex vs medulla differentiation.",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "a2000000-0000-0000-0000-000000000003",
+    title: "Scanning Fundamentals & Artifacts",
+    description: "Orientation, sweep patterns, and optimization ladder.",
+    modality: "ultrasound",
+    order_index: 3,
+    estimated_duration: 30,
+    content: {
+      sections: [
+        {
+          type: "steps",
+          title: "Probe Orientation & Sweep",
+          steps: [
+            "Indicator to head/right (standard).",
+            "Sagittal then transverse; fan/rock/rotate systematically.",
+            "Document in two orthogonal planes.",
+          ],
+        },
+        {
+          type: "mnemonic",
+          title: "Golden Rule",
+          content: "Never diagnose from one image. Always scan in multiple planes.",
+        },
+        {
+          type: "flow",
+          title: "Optimization Ladder",
+          nodes: [
+            { label: "Reposition patient / breath-hold" },
+            { label: "Check probe & preset" },
+            { label: "Depth → Gain → TGC" },
+            { label: "Focus/Frequency" },
+            { label: "Change window" },
+            { label: "Document limitation" },
+          ],
         },
       ],
     },
@@ -202,28 +263,31 @@ export const staticModules: Module[] = [
   {
     id: "a2000000-0000-0000-0000-000000000004",
     title: "Gallbladder Protocol",
-    description:
-      "RUQ views, CBD, mobility maneuvers, shadowing confirmation.",
+    description: "RUQ views, CBD, mobility maneuvers, shadowing confirmation.",
     modality: "ultrasound",
-    order_index: 3,
+    order_index: 4,
     estimated_duration: 25,
     content: {
       sections: [
         {
-          title: "Protocol",
-          items: [
-            "GB long and short; wall and lumen assessment.",
-            "CBD view; measure if indicated; use color if needed.",
-            "Liver survey adjacent to GB.",
+          type: "steps",
+          title: "Acquisition Steps",
+          steps: [
+            "GB long & short; assess wall, lumen, pericholecystic fluid.",
+            "CBD view; measure if indicated; add color if needed.",
+            "Survey adjacent liver parenchyma.",
           ],
         },
         {
-          title: "Tips & maneuvers",
-          items: [
-            "Left lateral decubitus to move stones/gas.",
-            "Deep inspiration to move diaphragm/liver caudad.",
-            "Heel-toe to avoid ribs; more gel for contact.",
-          ],
+          type: "checklist",
+          title: "Tips & Maneuvers",
+          items: ["Left lateral decubitus to move stones/gas", "Deep inspiration to drop liver/GB", "Heel-toe to avoid ribs; add gel for contact"],
+        },
+        {
+          type: "alert",
+          variant: "info",
+          title: "Artifact Clues",
+          items: ["Shadowing confirms stones", "Posterior enhancement supports fluid-filled lumen"],
         },
       ],
     },
@@ -231,26 +295,34 @@ export const staticModules: Module[] = [
   {
     id: "a2000000-0000-0000-0000-000000000005",
     title: "Renal & Bladder",
-    description:
-      "Kidneys in two planes, hydronephrosis screen, bladder volume.",
+    description: "Kidneys in two planes, hydronephrosis screen, bladder volume.",
     modality: "ultrasound",
-    order_index: 4,
+    order_index: 5,
     estimated_duration: 20,
     content: {
       sections: [
         {
-          title: "Kidney protocol",
-          items: [
-            "Long and short axis both kidneys; assess cortex/medulla.",
-            "Measure length if indicated; assess hydronephrosis.",
+          type: "steps",
+          title: "Kidney Protocol",
+          steps: [
+            "Long and short axis both kidneys; include cortex/medulla.",
+            "Measure length if indicated; evaluate for hydronephrosis.",
+            "Consider decubitus or prone for better windows.",
           ],
         },
         {
-          title: "Bladder protocol",
+          type: "checklist",
+          title: "Bladder Protocol",
           items: [
-            "Transverse and sagittal; post-void if ordered.",
-            "Posterior enhancement is expected; look for debris/clots.",
+            "Transverse and sagittal views",
+            "Posterior enhancement expected",
+            "Post-void if ordered; note debris/clots",
           ],
+        },
+        {
+          type: "mnemonic",
+          title: "Full bladder helps",
+          content: "Full bladder improves pelvic/ureteral visualization.",
         },
       ],
     },
@@ -258,19 +330,26 @@ export const staticModules: Module[] = [
   {
     id: "a2000000-0000-0000-0000-000000000006",
     title: "Thyroid & Superficial",
-    description:
-      "High-frequency technique, small sweeps, vascular mapping.",
+    description: "High-frequency technique, small sweeps, vascular mapping.",
     modality: "ultrasound",
-    order_index: 5,
+    order_index: 6,
     estimated_duration: 20,
     content: {
       sections: [
         {
-          title: "Technique",
-          items: [
-            "High-frequency linear; light pressure; small sweeps.",
-            "Use color for vascular mapping; identify lobes and isthmus.",
+          type: "steps",
+          title: "Technique Essentials",
+          steps: [
+            "High-frequency linear probe; light pressure.",
+            "Small sweeps; keep probe steady to avoid motion artifacts.",
+            "Use color to map vascularity; identify lobes and isthmus.",
           ],
+        },
+        {
+          type: "alert",
+          variant: "info",
+          title: "Safety",
+          items: ["Monitor patient comfort with neck extension", "Document any limitations (body habitus, motion)"],
         },
       ],
     },
@@ -278,26 +357,38 @@ export const staticModules: Module[] = [
   {
     id: "a2000000-0000-0000-0000-000000000007",
     title: "Vascular Access Guidance",
-    description:
-      "Artery vs vein cues, compressibility, in-plane vs out-of-plane.",
+    description: "Artery vs vein cues, compressibility, in-plane vs out-of-plane.",
     modality: "ultrasound",
-    order_index: 6,
+    order_index: 7,
     estimated_duration: 15,
     content: {
       sections: [
         {
-          title: "Identify vessels",
-          items: [
-            "Compression test for veins; pulsatility for arteries.",
-            "Use color: phasic vs pulsatile flow.",
+          type: "comparison",
+          title: "Artery vs Vein",
+          leftLabel: "Vein",
+          rightLabel: "Artery",
+          rows: [
+            { left: "Compressible", right: "Non-compressible" },
+            { left: "Phasic flow", right: "Pulsatile flow" },
+            { left: "Thin wall", right: "Thicker wall" },
           ],
         },
         {
-          title: "Approach",
-          items: [
-            "Plan depth and angle; in-plane vs out-of-plane.",
-            "Sterile technique per policy; document vessel and depth.",
+          type: "steps",
+          title: "Approach Planning",
+          steps: [
+            "Confirm depth and vessel diameter.",
+            "Choose in-plane vs out-of-plane approach.",
+            "Maintain sterile technique; visualize needle tip.",
           ],
+          footnote: "Document vessel, depth, and approach.",
+        },
+        {
+          type: "alert",
+          variant: "warning",
+          title: "Safety",
+          items: ["Do not proceed if vessel identity uncertain", "Abort if patient reports severe pain"],
         },
       ],
     },
@@ -305,20 +396,29 @@ export const staticModules: Module[] = [
   {
     id: "a2000000-0000-0000-0000-000000000008",
     title: "Ultrasound Troubleshooting",
-    description:
-      "Obesity, gas, ribs; optimization ladder and documentation.",
+    description: "Obesity, gas, ribs; optimization ladder and documentation.",
     modality: "ultrasound",
-    order_index: 7,
+    order_index: 8,
     estimated_duration: 15,
     content: {
       sections: [
         {
-          title: "Optimization ladder",
-          items: [
-            "Reposition patient; intercostal windows; change side.",
-            "Lower frequency; harmonics; increase contact/gel.",
-            "Change window; document limitations (habitus/gas).",
+          type: "flow",
+          title: "When Image is Poor",
+          nodes: [
+            { label: "Reposition / change breathing" },
+            { label: "Switch probe/preset" },
+            { label: "Adjust Depth → Gain → TGC" },
+            { label: "Focus/Frequency or harmonics" },
+            { label: "Change window/intercostal approach" },
+            { label: "Document limitation (habitus/gas/cooperation)" },
           ],
+        },
+        {
+          type: "alert",
+          variant: "info",
+          title: "Document Limits",
+          items: ["Body habitus", "Bowel gas", "Patient cooperation", "Rib shadowing"],
         },
       ],
     },
@@ -328,28 +428,27 @@ export const staticModules: Module[] = [
   {
     id: "e3000000-0000-0000-0000-000000000001",
     title: "Focused Echo Goals & Scope",
-    description:
-      "Binary questions, emergency use, limits vs full echo; when to escalate.",
+    description: "Binary questions, emergency use, limits vs full echo; when to escalate.",
     modality: "echo",
     order_index: 1,
     estimated_duration: 20,
     content: {
       sections: [
         {
-          title: "Goals",
-          items: [
-            "Effusion/tamponade?",
-            "Gross LV/RV function?",
-            "Volume status via IVC collapse.",
-          ],
+          type: "checklist",
+          title: "Focused Goals",
+          items: ["Effusion/tamponade?", "Gross LV/RV function?", "Volume status via IVC collapse"],
         },
         {
+          type: "alert",
+          variant: "danger",
           title: "Escalate",
-          items: [
-            "Effusion with RA/RV collapse.",
-            "Severely reduced global function.",
-            "No adequate windows despite optimization.",
-          ],
+          items: ["Effusion with RA/RV collapse", "Severely reduced global function", "No adequate windows after optimization"],
+        },
+        {
+          type: "mnemonic",
+          title: "Scope",
+          content: "POCUS answers binary questions; not a full diagnostic echo.",
         },
       ],
     },
@@ -357,31 +456,43 @@ export const staticModules: Module[] = [
   {
     id: "e3000000-0000-0000-0000-000000000002",
     title: "Parasternal Views (PLAX/PSAX)",
-    description:
-      "Probe placement, looks-right cues, PSAX base/mid/papillary.",
+    description: "Probe placement, looks-right cues, PSAX base/mid/papillary.",
     modality: "echo",
     order_index: 2,
     estimated_duration: 25,
     content: {
       sections: [
         {
-          title: "PLAX setup",
-          items: [
+          type: "steps",
+          title: "PLAX Setup",
+          steps: [
             "Left parasternal 3rd–4th ICS; indicator to right shoulder.",
             "Aim toward right scapula; maximize LV length; avoid foreshortening.",
           ],
         },
         {
-          title: "PSAX levels",
-          items: [
-            "Rotate 90° from PLAX.",
-            "Base (aortic), mid (mitral), papillary levels; fan apex to base.",
+          type: "steps",
+          title: "PSAX Levels",
+          steps: ["Rotate 90° from PLAX", "Base (AV), mid (MV), papillary levels", "Fan from base to apex"],
+        },
+        {
+          type: "comparison",
+          title: "Looks Right vs Off",
+          leftLabel: "Looks Right",
+          rightLabel: "Common Miss",
+          rows: [
+            { left: "RV anterior, LV/LA visible, Ao root centered", right: "Foreshortened LV or off-axis root" },
+            { left: "Pericardium as bright line", right: "Poor contact or rib shadowing" },
           ],
         },
         {
-          title: "Looks-right cues",
-          items: [
-            "RV anterior; Ao root between RV/LA; MV visible; pericardium bright.",
+          type: "imageGallery",
+          title: "Anatomy Reference",
+          images: [
+            {
+              src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Gray490.png",
+              caption: "Heart chambers (Gray’s Anatomy, public domain)",
+            },
           ],
         },
       ],
@@ -390,26 +501,33 @@ export const staticModules: Module[] = [
   {
     id: "e3000000-0000-0000-0000-000000000003",
     title: "Apical Views (4/2/3)",
-    description:
-      "Find true apex, avoid foreshortening, rotate to A2C/A3C.",
+    description: "Find true apex, avoid foreshortening, rotate to A2C/A3C.",
     modality: "echo",
     order_index: 3,
     estimated_duration: 25,
     content: {
       sections: [
         {
-          title: "Apical 4-chamber",
-          items: [
-            "Probe at PMI; indicator left; angle to right shoulder.",
-            "All 4 chambers; both AV valves; avoid foreshortening.",
+          type: "steps",
+          title: "Apical 4-Chamber",
+          steps: [
+            "Find PMI; indicator to patient's left; aim to right shoulder.",
+            "Ensure all 4 chambers; avoid foreshortening.",
           ],
         },
         {
-          title: "Rotate to A2C/A3C",
-          items: [
-            "A2C: rotate ~90° CCW from A4C (LA/LV only).",
-            "A3C: rotate ~60° CCW from A2C (Ao root, LV, LA).",
+          type: "flow",
+          title: "Rotate to A2C / A3C",
+          nodes: [
+            { label: "From A4C → rotate ~90° CCW → A2C (LA/LV only)" },
+            { label: "From A2C → rotate ~60° CCW → A3C (Ao root, LV, LA)" },
           ],
+        },
+        {
+          type: "alert",
+          variant: "info",
+          title: "If Foreshortened",
+          items: ["Move more lateral/inferior to find true apex", "Reduce depth to frame LV", "Reacquire with ECG gating if available"],
         },
       ],
     },
@@ -417,25 +535,24 @@ export const staticModules: Module[] = [
   {
     id: "e3000000-0000-0000-0000-000000000004",
     title: "Subcostal & IVC",
-    description:
-      "Subxiphoid 4-ch view; IVC measurement and collapsibility.",
+    description: "Subxiphoid 4-ch view; IVC measurement and collapsibility.",
     modality: "echo",
     order_index: 4,
     estimated_duration: 20,
     content: {
       sections: [
         {
-          title: "Subcostal 4-ch",
-          items: [
-            "Probe subxiphoid, indicator left; aim to left shoulder.",
-            "Use in COPD/ventilated/poor parasternal.",
-          ],
+          type: "steps",
+          title: "Subcostal 4-Chamber",
+          steps: ["Probe subxiphoid, indicator left", "Aim to left shoulder", "Useful in COPD/ventilated/poor parasternal"],
         },
         {
-          title: "IVC",
-          items: [
-            "Indicator to head; measure 2–3 cm from RA junction.",
-            "Normal: >50% collapse with sniff; <50% suggests elevated RA pressure.",
+          type: "steps",
+          title: "IVC Assessment",
+          steps: [
+            "Indicator to head; measure 2–3 cm from RA junction",
+            "Normal: >50% collapse with sniff",
+            "Collapse <50% suggests elevated RA pressure",
           ],
         },
       ],
@@ -444,25 +561,20 @@ export const staticModules: Module[] = [
   {
     id: "e3000000-0000-0000-0000-000000000005",
     title: "Poor Windows Strategies",
-    description:
-      "Obesity, COPD, post-op; alternative windows and positioning.",
+    description: "Obesity, COPD, post-op; alternative windows and positioning.",
     modality: "echo",
     order_index: 5,
     estimated_duration: 15,
     content: {
       sections: [
         {
-          title: "Obesity",
-          items: [
-            "Lower frequency; harmonics; more time for windows.",
-            "Subcostal priority; lateral decubitus with roll if tolerated.",
-          ],
-        },
-        {
-          title: "COPD/ventilated",
-          items: [
-            "Parasternal often limited; subcostal primary.",
-            "Sit up if tolerated; very low probe position for apical.",
+          type: "flow",
+          title: "If Windows Are Poor",
+          nodes: [
+            { label: "Obesity: lower frequency, harmonics, subcostal priority" },
+            { label: "COPD/ventilated: parasternal limited → subcostal primary" },
+            { label: "Try sitting up if tolerated" },
+            { label: "Use very low/apical position if needed" },
           ],
         },
       ],
@@ -471,27 +583,22 @@ export const staticModules: Module[] = [
   {
     id: "e3000000-0000-0000-0000-000000000006",
     title: "Focused Findings & Escalation",
-    description:
-      "Effusion, severe dysfunction, documentation of limitations.",
+    description: "Effusion, severe dysfunction, documentation of limitations.",
     modality: "echo",
     order_index: 6,
     estimated_duration: 15,
     content: {
       sections: [
         {
+          type: "alert",
+          variant: "danger",
           title: "Escalate",
-          items: [
-            "Pericardial effusion with RA/RV collapse.",
-            "Severely reduced global function.",
-            "Inability to obtain windows after optimization.",
-          ],
+          items: ["Pericardial effusion with RA/RV collapse", "Severely reduced global function", "Inability to obtain windows after optimization"],
         },
         {
+          type: "checklist",
           title: "Document",
-          items: [
-            "Views obtained; limitations (habitus, COPD, dressings).",
-            "Patient tolerance; arrhythmia noted.",
-          ],
+          items: ["Views obtained", "Limitations (habitus, COPD, dressings)", "Patient tolerance", "Arrhythmia noted"],
         },
       ],
     },
@@ -501,26 +608,31 @@ export const staticModules: Module[] = [
   {
     id: "b4000000-0000-0000-0000-000000000001",
     title: "Prep & Machine Setup",
-    description:
-      "Skin prep, electrodes, paper speed, calibration, filters.",
+    description: "Skin prep, electrodes, paper speed, calibration, filters.",
     modality: "ekg",
     order_index: 1,
     estimated_duration: 15,
     content: {
       sections: [
         {
+          type: "steps",
           title: "Prep",
-          items: [
-            "Expose only necessary areas; clean/dry/abrade/shave as needed.",
+          steps: [
+            "Expose only necessary areas; drape respectfully.",
+            "Clean/dry/abrade/shave as needed for contact.",
             "Check electrode dates/gel; replace dry pads.",
           ],
         },
         {
-          title: "Machine",
-          items: [
-            "Paper speed 25 mm/sec; calibration 10 mm/mV.",
-            "Lead integrity test; filters 0.5–40 Hz adults.",
-          ],
+          type: "steps",
+          title: "Machine Setup",
+          steps: ["Paper speed 25 mm/sec", "Calibration 10 mm/mV", "Lead integrity test", "Filters 0.5–40 Hz (adults)"],
+        },
+        {
+          type: "alert",
+          variant: "warning",
+          title: "Allergy & Skin",
+          items: ["Use latex-free electrodes if needed", "Observe for skin reaction; stop if severe"],
         },
       ],
     },
@@ -528,29 +640,39 @@ export const staticModules: Module[] = [
   {
     id: "b4000000-0000-0000-0000-000000000002",
     title: "Lead Placement Mastery",
-    description:
-      "Limb lead colors, chest lead landmarks V1–V6 with references.",
+    description: "Limb lead colors, chest lead landmarks V1–V6 with references.",
     modality: "ekg",
     order_index: 2,
     estimated_duration: 15,
     content: {
       sections: [
         {
-          title: "Limb leads",
-          items: [
-            "RA white (right), LA black (left arm), RL green (ground), LL red (left leg).",
+          type: "mnemonic",
+          title: "Limb Lead Colors",
+          content: "White on Right, Smoke (Black) over Fire (Red), Green is Ground.",
+        },
+        {
+          type: "steps",
+          title: "Chest Lead Landmarks",
+          steps: [
+            "V1: 4th ICS RSB; V2: 4th ICS LSB",
+            "V3: midway V2–V4; V4: 5th ICS MCL",
+            "V5: same level as V4, anterior axillary; V6: same level, mid-axillary",
           ],
         },
         {
-          title: "Chest leads",
-          items: [
-            "V1 4th ICS RSB; V2 4th ICS LSB.",
-            "V3 midway V2–V4; V4 5th ICS MCL.",
-            "V5 same level at AAL; V6 same level at MAL.",
+          type: "imageGallery",
+          title: "Placement Reference",
+          images: [
+            {
+              src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/EKG_12derivaciones.png/512px-EKG_12derivaciones.png",
+              caption: "Standard chest lead placement (CC BY-SA 4.0)",
+            },
+            {
+              src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/ConductionsystemoftheheartwithouttheHeart.png/512px-ConductionsystemoftheheartwithouttheHeart.png",
+              caption: "Cardiac conduction system (CC BY-SA 3.0)",
+            },
           ],
-          image:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/EKG_12derivaciones.png/512px-EKG_12derivaciones.png",
-          caption: "Standard chest lead placement (CC BY-SA 4.0).",
         },
       ],
     },
@@ -558,29 +680,32 @@ export const staticModules: Module[] = [
   {
     id: "b4000000-0000-0000-0000-000000000003",
     title: "Artifact Recognition & Fixes",
-    description:
-      "Muscle tremor, 60-cycle, wandering baseline, loose leads.",
+    description: "Muscle tremor, 60-cycle, wandering baseline, loose leads.",
     modality: "ekg",
     order_index: 3,
     estimated_duration: 15,
     content: {
       sections: [
         {
-          title: "Muscle tremor",
-          items: [
-            "Warm patient/room; support arms; reassure.",
+          type: "comparison",
+          title: "Artifact Type vs Fix",
+          leftLabel: "Artifact",
+          rightLabel: "First Fix",
+          rows: [
+            { left: "Muscle tremor (fuzzy baseline)", right: "Warm patient, support arms, reassure" },
+            { left: "60-cycle interference", right: "Remove nearby electronics / check grounding" },
+            { left: "Wandering baseline", right: "Clean skin better; replace dry electrodes" },
+            { left: "Loose lead", right: "Check connections; replace electrode" },
           ],
         },
         {
-          title: "60-cycle interference",
-          items: [
-            "Remove nearby electronics; check grounding; replace electrodes if needed.",
-          ],
-        },
-        {
-          title: "Wandering baseline",
-          items: [
-            "Clean skin thoroughly; replace dry pads; coach stillness.",
+          type: "flow",
+          title: "If Artifact Persists",
+          nodes: [
+            { label: "Re-check skin prep and electrodes" },
+            { label: "Verify lead order and placement" },
+            { label: "Move away electronics / ensure grounding" },
+            { label: "Document limitation if unresolved" },
           ],
         },
       ],
@@ -589,19 +714,21 @@ export const staticModules: Module[] = [
   {
     id: "b4000000-0000-0000-0000-000000000004",
     title: "Rhythm Strip & Escalation",
-    description:
-      "Lead II strip protocol; dangerous rhythms requiring immediate escalation.",
+    description: "Lead II strip protocol; dangerous rhythms requiring immediate escalation.",
     modality: "ekg",
     order_index: 4,
     estimated_duration: 15,
     content: {
       sections: [
         {
-          title: "Strip protocol",
-          items: ["Lead II, 6–10 seconds; assess P-QRS-T; rate/rhythm regularity."],
+          type: "steps",
+          title: "Lead II Rhythm Strip",
+          steps: ["Record 6–10 seconds minimum", "Assess P-QRS-T, rate, rhythm regularity", "Ensure clear baseline"],
         },
         {
-          title: "Escalate immediately",
+          type: "alert",
+          variant: "danger",
+          title: "Escalate Immediately",
           items: ["VF/VT", "Asystole", "Complete heart block with symptoms"],
         },
       ],

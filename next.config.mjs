@@ -6,6 +6,18 @@ const nextConfig = {
         protocol: "https",
         hostname: "api.dicebear.com",
       },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+      },
+      {
+        protocol: "https",
+        hostname: "www.bartleby.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.researchgate.net",
+      },
     ],
   },
 };
