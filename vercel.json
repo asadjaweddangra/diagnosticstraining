@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "framework": "nextjs",
+  "builds": [
+    {
+      "src": "app/next.config.mjs",
+      "use": "@vercel/next"
+    }
+  ],
   "installCommand": "cd app && npm install",
   "buildCommand": "cd app && npm run build",
-  "outputDirectory": "app/.next"
+  "routes": [
+    { "src": "/(.*)", "dest": "app/$1" }
+  ]
 }
 
