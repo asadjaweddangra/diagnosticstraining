@@ -34,6 +34,7 @@ export type ContentSection =
       rows: { left: string; right: string }[];
       leftLabel?: string;
       rightLabel?: string;
+      body?: string;
     }
   | {
       type: "flow";

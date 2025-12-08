@@ -218,6 +218,16 @@ export const staticModules: Module[] = [
           title: "Quick optimization order",
           body: "Depth → Gain → TGC → Focus → Frequency. Change one major control at a time so you see the effect.",
         },
+        {
+          type: "imageGallery",
+          title: "Pocket ultrasound reference",
+          images: [
+            {
+              src: "https://www.researchgate.net/profile/Sorin-Dudea/publication/320122740/figure/fig1/AS:631646408806401@1527600781996/Photograph-of-the-pocket-sized-ultrasound-device-Images-were-displayed-on-a-smartphone.png",
+              caption: "Pocket ultrasound device (CC BY 4.0)",
+            },
+          ],
+        },
       ],
     },
   },

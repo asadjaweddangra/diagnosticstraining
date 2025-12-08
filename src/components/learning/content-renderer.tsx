@@ -86,6 +86,7 @@ export function ContentRenderer({ content }: { content: any }) {
               rows={section.rows}
               leftLabel={section.leftLabel}
               rightLabel={section.rightLabel}
+              body={"body" in section ? section.body : undefined}
             />
           ) : null}
 

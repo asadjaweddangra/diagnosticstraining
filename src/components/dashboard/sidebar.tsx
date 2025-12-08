@@ -41,11 +41,11 @@ export function Sidebar() {
     <aside className="hidden md:flex w-64 shrink-0 flex-col rounded-3xl bg-white/80 p-4 shadow-lg ring-1 ring-slate-200 backdrop-blur">
       <div className="mb-6 flex items-center gap-2 px-2">
         <div className="grid h-10 w-10 place-items-center rounded-2xl bg-primary-100 text-primary-600 font-semibold">
-          SN
+          SL
         </div>
         <div>
-          <p className="text-sm font-semibold text-slate-900">SmartNurse</p>
-          <p className="text-xs text-slate-500">Training Platform</p>
+          <p className="text-sm font-semibold text-slate-900">SonoLearn</p>
+          <p className="text-xs text-slate-500">Clinical Training</p>
         </div>
       </div>
       <nav className="flex flex-col gap-1">

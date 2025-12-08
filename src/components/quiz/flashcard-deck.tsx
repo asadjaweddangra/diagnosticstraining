@@ -9,7 +9,7 @@ type Card = {
 };
 
 type Props = {
-  cards: Card[];
+  cards: readonly Card[];
 };
 
 export function FlashcardDeck({ cards }: Props) {
