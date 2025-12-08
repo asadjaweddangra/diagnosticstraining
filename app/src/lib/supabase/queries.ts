@@ -1,29 +1,44 @@
 import { createSupabaseServerClient } from "./server";
 import { Module, Quiz, CompetencyRequirement, UserCompetency } from "@/types";
+import { staticModules } from "@/data/modules";
 
 export async function getModules(modality?: string): Promise<Module[]> {
-  const supabase = createSupabaseServerClient();
-  let query = supabase
-    .from("modules")
-    .select("*")
-    .order("order_index", { ascending: true });
-  if (modality) {
-    query = query.or(`modality.eq.${modality},modality.eq.common`);
+  try {
+    const supabase = createSupabaseServerClient();
+    let query = supabase
+      .from("modules")
+      .select("*")
+      .order("order_index", { ascending: true });
+    if (modality) {
+      query = query.or(`modality.eq.${modality},modality.eq.common`);
+    }
+    const { data, error } = await query;
+    if (error) throw error;
+    if (data && data.length > 0) return data as Module[];
+  } catch {
+    // fall back to static
   }
-  const { data, error } = await query;
-  if (error) throw error;
-  return data as Module[];
+  const fallback = modality
+    ? staticModules.filter(
+        (m) => m.modality === modality || m.modality === "common"
+      )
+    : staticModules;
+  return fallback.sort((a, b) => (a.order_index || 0) - (b.order_index || 0));
 }
 
 export async function getModuleById(id: string): Promise<Module | null> {
-  const supabase = createSupabaseServerClient();
-  const { data, error } = await supabase
-    .from("modules")
-    .select("*")
-    .eq("id", id)
-    .single();
-  if (error) return null;
-  return data as Module;
+  try {
+    const supabase = createSupabaseServerClient();
+    const { data, error } = await supabase
+      .from("modules")
+      .select("*")
+      .eq("id", id)
+      .single();
+    if (!error && data) return data as Module;
+  } catch {
+    // ignore and fall back
+  }
+  return staticModules.find((m) => m.id === id) || null;
 }
 
 export async function getQuizzes(): Promise<Quiz[]> {

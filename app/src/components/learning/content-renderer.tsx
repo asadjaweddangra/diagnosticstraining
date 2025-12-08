@@ -4,6 +4,8 @@ type Section = {
   items?: string[];
   links?: { label: string; href: string }[];
   callout?: string;
+  image?: string;
+  caption?: string;
 };
 
 export function ContentRenderer({ content }: { content: any }) {
@@ -53,6 +55,21 @@ export function ContentRenderer({ content }: { content: any }) {
                 </a>
               ))}
             </div>
+          ) : null}
+          {section.image ? (
+            <figure className="mt-3 space-y-2 rounded-xl bg-white p-3 ring-1 ring-slate-200">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={section.image}
+                alt={section.caption || section.title || "Illustration"}
+                className="w-full rounded-lg object-cover"
+              />
+              {section.caption ? (
+                <figcaption className="text-xs text-slate-500">
+                  {section.caption}
+                </figcaption>
+              ) : null}
+            </figure>
           ) : null}
         </div>
       ))}
