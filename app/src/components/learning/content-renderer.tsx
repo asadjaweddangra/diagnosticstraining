@@ -2,6 +2,8 @@ type Section = {
   title?: string;
   body?: string;
   items?: string[];
+  links?: { label: string; href: string }[];
+  callout?: string;
 };
 
 export function ContentRenderer({ content }: { content: any }) {
@@ -31,6 +33,26 @@ export function ContentRenderer({ content }: { content: any }) {
                 <li key={i}>{item}</li>
               ))}
             </ul>
+          ) : null}
+          {section.callout ? (
+            <div className="mt-3 rounded-xl bg-primary-50 px-3 py-2 text-sm text-primary-800">
+              {section.callout}
+            </div>
+          ) : null}
+          {section.links ? (
+            <div className="mt-3 space-y-1">
+              {section.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-semibold text-primary-600 hover:underline"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
           ) : null}
         </div>
       ))}

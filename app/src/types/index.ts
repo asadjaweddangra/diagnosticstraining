@@ -3,6 +3,7 @@ export type Module = {
   title: string;
   description: string | null;
   content: any;
+  modality?: "ultrasound" | "echo" | "ekg" | "common";
   order_index: number | null;
   estimated_duration: number | null;
 };

@@ -1,12 +1,16 @@
 import { createSupabaseServerClient } from "./server";
 import { Module, Quiz, CompetencyRequirement, UserCompetency } from "@/types";
 
-export async function getModules(): Promise<Module[]> {
+export async function getModules(modality?: string): Promise<Module[]> {
   const supabase = createSupabaseServerClient();
-  const { data, error } = await supabase
+  let query = supabase
     .from("modules")
     .select("*")
     .order("order_index", { ascending: true });
+  if (modality) {
+    query = query.or(`modality.eq.${modality},modality.eq.common`);
+  }
+  const { data, error } = await query;
   if (error) throw error;
   return data as Module[];
 }
