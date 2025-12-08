@@ -148,7 +148,7 @@ export const staticModules: Module[] = [
 
   // Ultrasound Track
   {
-    id: "u2000000-0000-0000-0000-000000000001",
+    id: "a2000000-0000-0000-0000-000000000001",
     title: "Ultrasound Physics & Controls",
     description:
       "Depth, gain, TGC, focus, frequency trade-offs; artifacts recognition.",
@@ -177,7 +177,7 @@ export const staticModules: Module[] = [
     },
   },
   {
-    id: "u2000000-0000-0000-0000-000000000002",
+    id: "a2000000-0000-0000-0000-000000000002",
     title: "Abdominal Core Anatomy",
     description:
       "Liver/GB, IVC vs Aorta cues, kidney landmarks with real images.",
@@ -200,7 +200,7 @@ export const staticModules: Module[] = [
     },
   },
   {
-    id: "u2000000-0000-0000-0000-000000000004",
+    id: "a2000000-0000-0000-0000-000000000004",
     title: "Gallbladder Protocol",
     description:
       "RUQ views, CBD, mobility maneuvers, shadowing confirmation.",
@@ -229,7 +229,7 @@ export const staticModules: Module[] = [
     },
   },
   {
-    id: "u2000000-0000-0000-0000-000000000005",
+    id: "a2000000-0000-0000-0000-000000000005",
     title: "Renal & Bladder",
     description:
       "Kidneys in two planes, hydronephrosis screen, bladder volume.",
@@ -256,7 +256,7 @@ export const staticModules: Module[] = [
     },
   },
   {
-    id: "u2000000-0000-0000-0000-000000000006",
+    id: "a2000000-0000-0000-0000-000000000006",
     title: "Thyroid & Superficial",
     description:
       "High-frequency technique, small sweeps, vascular mapping.",
@@ -276,7 +276,7 @@ export const staticModules: Module[] = [
     },
   },
   {
-    id: "u2000000-0000-0000-0000-000000000007",
+    id: "a2000000-0000-0000-0000-000000000007",
     title: "Vascular Access Guidance",
     description:
       "Artery vs vein cues, compressibility, in-plane vs out-of-plane.",
@@ -303,7 +303,7 @@ export const staticModules: Module[] = [
     },
   },
   {
-    id: "u2000000-0000-0000-0000-000000000008",
+    id: "a2000000-0000-0000-0000-000000000008",
     title: "Ultrasound Troubleshooting",
     description:
       "Obesity, gas, ribs; optimization ladder and documentation.",
@@ -499,7 +499,7 @@ export const staticModules: Module[] = [
 
   // EKG Track
   {
-    id: "k4000000-0000-0000-0000-000000000001",
+    id: "b4000000-0000-0000-0000-000000000001",
     title: "Prep & Machine Setup",
     description:
       "Skin prep, electrodes, paper speed, calibration, filters.",
@@ -526,7 +526,7 @@ export const staticModules: Module[] = [
     },
   },
   {
-    id: "k4000000-0000-0000-0000-000000000002",
+    id: "b4000000-0000-0000-0000-000000000002",
     title: "Lead Placement Mastery",
     description:
       "Limb lead colors, chest lead landmarks V1–V6 with references.",
@@ -556,7 +556,7 @@ export const staticModules: Module[] = [
     },
   },
   {
-    id: "k4000000-0000-0000-0000-000000000003",
+    id: "b4000000-0000-0000-0000-000000000003",
     title: "Artifact Recognition & Fixes",
     description:
       "Muscle tremor, 60-cycle, wandering baseline, loose leads.",
@@ -587,7 +587,7 @@ export const staticModules: Module[] = [
     },
   },
   {
-    id: "k4000000-0000-0000-0000-000000000004",
+    id: "b4000000-0000-0000-0000-000000000004",
     title: "Rhythm Strip & Escalation",
     description:
       "Lead II strip protocol; dangerous rhythms requiring immediate escalation.",

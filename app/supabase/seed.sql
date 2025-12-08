@@ -33,45 +33,45 @@ values
   }',4,20,'common'),
 
 -- Ultrasound track
-('u2000000-0000-0000-0000-000000000001','Ultrasound Physics & Controls','Depth, gain, TGC, focus, frequency trade-offs', '{
+('a2000000-0000-0000-0000-000000000001','Ultrasound Physics & Controls','Depth, gain, TGC, focus, frequency trade-offs', '{
   "sections":[
     {"title":"Controls sequence","items":["Depth first","Overall gain, then TGC","Focus at target depth","Frequency: resolution vs penetration"]},
     {"title":"Artifacts to recognize","items":["Shadowing (stones/bone)","Enhancement (fluid)","Reverberation/mirror/side lobes"]},
     {"title":"References","links":[{"label":"Radiopaedia - US physics","href":"https://radiopaedia.org/articles/ultrasound-physics-basics"}]}
   ]}',1,30,'ultrasound'),
-('u2000000-0000-0000-0000-000000000002','Core Anatomy - Abdomen','Liver/GB, IVC vs Aorta cues, kidneys', '{
+('a2000000-0000-0000-0000-000000000002','Core Anatomy - Abdomen','Liver/GB, IVC vs Aorta cues, kidneys', '{
   "sections":[
     {"title":"Landmarks","items":["Liver RUQ, GB beneath liver","IVC compressible vs aorta pulsatile","Kidneys retroperitoneal"]},
     {"title":"Views","items":["GB long/short","CBD view","Kidney long/short, cortex/medulla distinction"]}]
   }',2,25,'ultrasound'),
-('u2000000-0000-0000-0000-000000000003','Scanning Fundamentals & Artifacts','Orientation, sweep patterns, optimization ladder', '{
+('a2000000-0000-0000-0000-000000000003','Scanning Fundamentals & Artifacts','Orientation, sweep patterns, optimization ladder', '{
   "sections":[
     {"title":"Orientation","items":["Indicator to head/right","Sagittal/transverse/coronal planes"]},
     {"title":"Sweep pattern","items":["Long then short","Fan/rock/rotate systematically","Document in 2 planes"]},
     {"title":"Optimization ladder","items":["Positioning","Probe/preset","Depth/Gain/TGC","Focus/Frequency","Change window","Document limitation"]}]
   }',3,30,'ultrasound'),
-('u2000000-0000-0000-0000-000000000004','Abdomen/Gallbladder Protocol','RUQ protocol, CBD, mobility, shadowing', '{
+('a2000000-0000-0000-0000-000000000004','Abdomen/Gallbladder Protocol','RUQ protocol, CBD, mobility, shadowing', '{
   "sections":[
     {"title":"Protocol","items":["GB long/short","Measure GB wall if indicated","CBD with color if needed","Liver survey"]},
     {"title":"Tips","items":["LLD to move stones/gas","Inspiration breath-hold","Heel-toe to avoid ribs"]},
     {"title":"Artifacts","items":["Shadowing confirms stones","Posterior enhancement for fluid"]}]
   }',4,25,'ultrasound'),
-('u2000000-0000-0000-0000-000000000005','Renal/Bladder Protocol','Kidneys in 2 planes, bladder volume, hydronephrosis', '{
+('a2000000-0000-0000-0000-000000000005','Renal/Bladder Protocol','Kidneys in 2 planes, bladder volume, hydronephrosis', '{
   "sections":[
     {"title":"Protocol","items":["Kidneys long/short with cortex","Measure if indicated","Bladder transverse/sagittal, post-void if ordered"]},
     {"title":"Tips","items":["Full bladder improves pelvic views","Supine and decubitus if needed","Posterior enhancement in bladder normal"]}]
   }',5,20,'ultrasound'),
-('u2000000-0000-0000-0000-000000000006','Thyroid & Superficial','High-frequency linear, small movements, vessels/structures', '{
+('a2000000-0000-0000-0000-000000000006','Thyroid & Superficial','High-frequency linear, small movements, vessels/structures', '{
   "sections":[
     {"title":"Technique","items":["High frequency linear","Light pressure, small sweeps","Color for vascular mapping"]},
     {"title":"Views","items":["Long/transverse each lobe","Isthmus midline"]}]
   }',6,20,'ultrasound'),
-('u2000000-0000-0000-0000-000000000007','Vascular Access Guidance','Identify artery vs vein, compressibility, needle path', '{
+('a2000000-0000-0000-0000-000000000007','Vascular Access Guidance','Identify artery vs vein, compressibility, needle path', '{
   "sections":[
     {"title":"Identify","items":["Compression test veins","Color: phasic vs pulsatile","Depth and diameter for plan"]},
     {"title":"Approach","items":["In-plane vs out-of-plane","Sterile technique per policy","Document vessel and depth"]}]
   }',7,15,'ultrasound'),
-('u2000000-0000-0000-0000-000000000008','Ultrasound Troubleshooting','Poor images due to gas, habitus; optimization ladder', '{
+('a2000000-0000-0000-0000-000000000008','Ultrasound Troubleshooting','Poor images due to gas, habitus; optimization ladder', '{
   "sections":[
     {"title":"Obesity","items":["Lower frequency","Harmonics if available","Use subcostal for RUQ liver/GB"]},
     {"title":"Gas/ribs","items":["Change window/intercostal","Patient position changes","Breath-hold to move diaphragm"]},
@@ -111,23 +111,23 @@ values
   }',6,15,'echo'),
 
 -- EKG track
-('k4000000-0000-0000-0000-000000000001','Prep & Machine Setup','Skin prep, electrodes, machine calibration', '{
+('b4000000-0000-0000-0000-000000000001','Prep & Machine Setup','Skin prep, electrodes, machine calibration', '{
   "sections":[
     {"title":"Prep","items":["Expose needed areas respectfully","Clean/dry/abrade/shave if needed","Check electrode dates/gel"]},
     {"title":"Machine","items":["Paper speed 25 mm/sec","Calibration 10 mm/mV","Lead integrity test","Filters 0.5-40 Hz adults"]}]
   }',1,15,'ekg'),
-('k4000000-0000-0000-0000-000000000002','Limb & Precordial Placement','Standard positions and color mnemonics', '{
+('b4000000-0000-0000-0000-000000000002','Limb & Precordial Placement','Standard positions and color mnemonics', '{
   "sections":[
     {"title":"Limb leads","items":["RA white (right)","LA black (left arm)","RL green (ground)","LL red (left leg)"]},
     {"title":"Chest leads","items":["V1 4th ICS RSB","V2 4th ICS LSB","V3 midway V2-V4","V4 5th ICS MCL","V5 same level AAL","V6 same level MAL"]}]
   }',2,15,'ekg'),
-('k4000000-0000-0000-0000-000000000003','Artifact Recognition & Fixes','Muscle, 60-cycle, wandering baseline, loose lead', '{
+('b4000000-0000-0000-0000-000000000003','Artifact Recognition & Fixes','Muscle, 60-cycle, wandering baseline, loose lead', '{
   "sections":[
     {"title":"Muscle tremor","items":["Warm patient","Support arms","Reduce anxiety"]},
     {"title":"60-cycle","items":["Remove electronics","Check grounding","Replace electrodes if needed"]},
     {"title":"Wandering baseline","items":["Clean skin better","Replace dry electrodes","Coach stillness"]}]
   }',3,15,'ekg'),
-('k4000000-0000-0000-0000-000000000004','Rhythm Strip & Escalation','Lead II strip, dangerous rhythms to escalate', '{
+('b4000000-0000-0000-0000-000000000004','Rhythm Strip & Escalation','Lead II strip, dangerous rhythms to escalate', '{
   "sections":[
     {"title":"Rhythm strip","items":["Lead II 6-10s","Check P-QRS-T","Rate/rhythm regularity"]},
     {"title":"Escalate immediately","items":["VF/VT","Asystole","Complete heart block with symptoms"]}]
@@ -136,7 +136,7 @@ values
 -- Quizzes (sample: micro + comprehensive)
 insert into quizzes (id, module_id, title, type, passing_score, time_limit, max_attempts, questions)
 values
-('q-ultrasound-001',null,'Ultrasound Micro Quiz','micro',80,15,3,
+('a1111111-1111-4111-8111-111111111111',null,'Ultrasound Micro Quiz','micro',80,15,3,
   '[
     {"id":"q1","type":"multiple_choice","question":"Higher frequency ultrasound provides:","options":["Better penetration","Better resolution","Both","Neither"],"answer":"Better resolution","rationale":"Higher frequency improves resolution but reduces penetration."},
     {"id":"q2","type":"multiple_choice","question":"Probe choice for deep abdominal structures:","options":["7-15 MHz linear","2-5 MHz curved","Any probe works","High frequency phased"],"answer":"2-5 MHz curved","rationale":"Low frequency curved for penetration and FOV."},
@@ -144,7 +144,7 @@ values
     {"id":"q4","type":"multiple_choice","question":"If the whole image is dark, adjust:","options":["Depth","Focus","Overall gain","TGC only"],"answer":"Overall gain","rationale":"Overall gain impacts the full image first."},
     {"id":"q5","type":"multiple_choice","question":"TGC is used to:","options":["Overall brightness","Depth-specific brightness","Change probe frequency","Doppler sensitivity"],"answer":"Depth-specific brightness","rationale":"TGC compensates for attenuation by depth."}
   ]'::jsonb),
-('q-echo-001',null,'Echo Micro Quiz','micro',80,15,3,
+('e1111111-1111-4111-8111-111111111111',null,'Echo Micro Quiz','micro',80,15,3,
   '[
     {"id":"q21","type":"multiple_choice","question":"PLAX indicator points toward:","options":["Left hip","Right shoulder","Left shoulder","Right hip"],"answer":"Right shoulder","rationale":"Standard PLAX orientation."},
     {"id":"q22","type":"multiple_choice","question":"IVC normal collapse with sniff:","options":["<25%","~50%",">75%","No change"],"answer":"~50%","rationale":">50% collapse suggests normal RA pressure."},
@@ -152,14 +152,14 @@ values
     {"id":"q24","type":"multiple_choice","question":"Apical foreshortening fix:","options":["Move higher","Move more lateral/inferior","Use more gain","Use CW Doppler"],"answer":"Move more lateral/inferior","rationale":"Find true apex to avoid foreshortening."},
     {"id":"q25","type":"multiple_choice","question":"Effusion with RA collapse means:","options":["Normal","Tamponade concern","Artifact","Hypertension"],"answer":"Tamponade concern","rationale":"RA/RV collapse suggests elevated pericardial pressure."}
   ]'::jsonb),
-('q-ekg-001',null,'EKG Micro Quiz','micro',80,10,3,
+('b1111111-1111-4111-8111-111111111111',null,'EKG Micro Quiz','micro',80,10,3,
   '[
     {"id":"q31","type":"multiple_choice","question":"Paper speed standard:","options":["10 mm/sec","25 mm/sec","50 mm/sec","100 mm/sec"],"answer":"25 mm/sec","rationale":"Standard EKG speed."},
     {"id":"q32","type":"multiple_choice","question":"V1 placement:","options":["3rd ICS RSB","4th ICS RSB","5th ICS RSB","4th ICS LSB"],"answer":"4th ICS RSB","rationale":"Key chest landmark."},
     {"id":"q33","type":"multiple_choice","question":"60-cycle interference first fix:","options":["Replace electrodes","Remove nearby electronics","Switch to battery","Change paper"],"answer":"Remove nearby electronics","rationale":"Eliminate source of electrical noise first."},
     {"id":"q34","type":"multiple_choice","question":"Escalate immediately for:","options":["Sinus brady 55","PACs","VF/VT","Sinus tach 120"],"answer":"VF/VT","rationale":"Life-threatening rhythms need immediate action."}
   ]'::jsonb),
-('q-comp-001',null,'Comprehensive Scenario Quiz','comprehensive',80,40,3,
+('c1111111-2222-4111-8111-111111111111',null,'Comprehensive Scenario Quiz','comprehensive',80,40,3,
   '[
     {"id":"q21","type":"scenario","question":"RUQ pain with gas obscuring GB, first step?","options":["Increase gain","Higher frequency probe","Reposition to LLD","Call non-diagnostic"],"answer":"Reposition to LLD","rationale":"Optimization ladder starts with positioning."},
     {"id":"q23","type":"multiple_choice","question":"No parasternal windows in obese COPD patient. Best alternative?","options":["Higher frequency","Subcostal windows","More pressure","Stop study"],"answer":"Subcostal windows","rationale":"Subcostal often succeeds when parasternal fails."},
