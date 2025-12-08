@@ -67,3 +67,32 @@ export async function getUserCompetencies(
   return (data || []) as UserCompetency[];
 }
 
+export async function getQuizAttempts(userId?: string) {
+  const supabase = createSupabaseServerClient();
+  let query = supabase.from("quiz_attempts").select("*").order("created_at", {
+    ascending: false,
+  });
+  if (userId) {
+    query = query.eq("user_id", userId);
+  }
+  const { data, error } = await query;
+  if (error) return [];
+  return data || [];
+}
+
+export async function getProfile() {
+  const supabase = createSupabaseServerClient();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  if (!session?.user) return null;
+
+  const { data, error } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", session.user.id)
+    .maybeSingle();
+  if (error) return null;
+  return data;
+}
+
