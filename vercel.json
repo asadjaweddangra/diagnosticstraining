@@ -7,9 +7,6 @@
     }
   ],
   "installCommand": "cd app && npm install",
-  "buildCommand": "cd app && npm run build",
-  "routes": [
-    { "src": "/(.*)", "dest": "app/$1" }
-  ]
+  "buildCommand": "cd app && npm run build"
 }
 
