@@ -25,7 +25,7 @@ export default async function ModuleDetailPage({ params }: Props) {
         </div>
       </div>
       <div className="rounded-3xl bg-white/80 p-6 shadow-lg ring-1 ring-slate-200">
-        <ContentRenderer content={moduleData?.content} />
+        <ContentRenderer content={moduleData?.content ?? undefined} />
       </div>
     </div>
   );
