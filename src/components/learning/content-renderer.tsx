@@ -53,12 +53,14 @@ export function ContentRenderer({
               ) : null}
               {"image" in section && section.image ? (
                 <figure className="mt-3 space-y-2 rounded-xl bg-white/5 p-3 ring-1 ring-white/10">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={section.image}
-                    alt={section.caption || section.title || "Illustration"}
-                    className="w-full rounded-lg object-cover"
-                  />
+                  <div className="relative h-48 w-full overflow-hidden rounded-lg">
+                    <img
+                      src={section.image}
+                      alt={section.caption || section.title || "Illustration"}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                   {section.caption ? <figcaption className="text-xs text-ink/60">{section.caption}</figcaption> : null}
                 </figure>
               ) : null}

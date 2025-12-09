@@ -47,6 +47,10 @@ export const ekgChapters: EkgChapter[] = [
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Normal_ECG.jpg",
             caption: "Normal ECG baseline reference (Wikimedia, public domain)",
+            callouts: [
+              { label: "P wave", detail: "Atrial depolarization before each QRS" },
+              { label: "QRS", detail: "Narrow complex <120 ms in normal conduction" },
+            ],
           },
         ],
       },
@@ -69,6 +73,12 @@ export const ekgChapters: EkgChapter[] = [
       { label: "Normal rate", detail: "SA node fires 60–100 bpm." },
       { label: "PQRST", detail: "Electrical, not mechanical; always correlate with patient." },
     ],
+    drill: {
+      title: "Explain the waveform",
+      scenario: "Patient asks what the spikes mean.",
+      steps: ["Point to P as atrial squeeze signal", "QRS as ventricular squeeze signal", "T as reset/recovery"],
+      takeaway: "Plain-language explanations reduce anxiety and improve cooperation.",
+    },
   },
   {
     slug: "machine-and-setup",
@@ -104,6 +114,11 @@ export const ekgChapters: EkgChapter[] = [
       { label: "Filters", detail: "0.5–40 Hz for adults; adjust per protocol." },
       { label: "Torso placement", detail: "Document if limb leads on torso; can change morphology." },
     ],
+    drill: {
+      title: "Pre-flight check",
+      scenario: "Machine just powered on; you need a clean first tracing.",
+      steps: ["Verify paper speed 25 mm/sec, calibration 10 mm/mV", "Run lead integrity test", "Check battery/power and filters"],
+    },
   },
   {
     slug: "lead-placement-mastery",
@@ -199,6 +214,11 @@ export const ekgChapters: EkgChapter[] = [
       { label: "When to stop", detail: "If patient distress or unsafe conditions—pause and escalate." },
       { label: "Document", detail: "Note artifact type and mitigation attempted." },
     ],
+    drill: {
+      title: "Identify artifact fast",
+      scenario: "Baseline is drifting during pre-op EKG.",
+      steps: ["Pause recording", "Clean/abrade skin; replace electrodes", "Re-run with patient relaxed and arms supported"],
+    },
   },
   {
     slug: "rhythm-recognition",
@@ -234,6 +254,11 @@ export const ekgChapters: EkgChapter[] = [
       { label: "Your role", detail: "Recognition and escalation, not clinical interpretation." },
       { label: "Document time", detail: "Record time of event and who was notified." },
     ],
+    drill: {
+      title: "Escalate immediately",
+      scenario: "You see wide complex tachycardia on monitor.",
+      steps: ["Stop acquisition", "Call for help/activate response", "Stay with patient until relieved; note time"],
+    },
   },
   {
     slug: "real-world-scenarios",

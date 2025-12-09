@@ -223,8 +223,8 @@ export const staticModules: Module[] = [
           title: "Pocket ultrasound reference",
           images: [
             {
-              src: "https://www.researchgate.net/profile/Sorin-Dudea/publication/320122740/figure/fig1/AS:631646408806401@1527600781996/Photograph-of-the-pocket-sized-ultrasound-device-Images-were-displayed-on-a-smartphone.png",
-              caption: "Pocket ultrasound device (CC BY 4.0)",
+              src: "https://upload.wikimedia.org/wikipedia/commons/0/06/Ultrasound_machine.jpg",
+              caption: "Portable ultrasound device (Wikimedia, CC BY-SA)",
             },
           ],
         },

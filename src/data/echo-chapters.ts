@@ -44,6 +44,10 @@ export const echoChapters: EchoChapter[] = [
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Parasternal_long-axis_view_of_heart_ultrasound.gif",
             caption: "Parasternal long-axis ultrasound (Wikimedia)",
+            callouts: [
+              { label: "Pericardium", detail: "Bright line encasing heart" },
+              { label: "LV length", detail: "Avoid foreshortening—elongate chamber" },
+            ],
           },
         ],
       },
@@ -66,6 +70,12 @@ export const echoChapters: EchoChapter[] = [
       { label: "RV is anterior", detail: "Closest to probe in parasternal views." },
       { label: "LV thicker wall", detail: "Higher pressure system; helps orientation." },
     ],
+    drill: {
+      title: "Orient the heart",
+      scenario: "You need to explain chamber positions before scanning.",
+      steps: ["Identify RA/RV as anterior/right on PLAX", "Point out LV/LA posterior on PLAX", "Relate valves: MV between LA/LV; TV between RA/RV"],
+      takeaway: "Verbalizing landmarks cements probe orientation before imaging.",
+    },
   },
   {
     slug: "focused-vs-full-echo",
@@ -102,6 +112,11 @@ export const echoChapters: EchoChapter[] = [
         items: ["Views obtained", "Limitations (habitus, COPD, dressings)", "Patient tolerance", "Arrhythmia noted"],
       },
     ],
+    drill: {
+      title: "Scope clarification",
+      scenario: "Resident asks for valve gradients on a focused exam.",
+      steps: ["Restate focused goals (effusion, gross function, IVC)", "Explain limitation: no valve quantification in focused study", "Offer to flag for formal echo if concern arises"],
+    },
   },
   {
     slug: "patient-setup-and-windows",
@@ -137,6 +152,12 @@ export const echoChapters: EchoChapter[] = [
       { label: "ECG gating", detail: "Clear QRS improves timing of clips." },
       { label: "Subcostal", detail: "Go early if parasternal blocked by lung." },
     ],
+    drill: {
+      title: "Window choice",
+      scenario: "COPD patient with poor parasternal view.",
+      steps: ["Try left lateral briefly", "Switch to subcostal early", "Add ECG gating once a window found"],
+      takeaway: "Switch windows early instead of over-tuning a blocked view.",
+    },
   },
   {
     slug: "parasternal-views",
@@ -184,10 +205,18 @@ export const echoChapters: EchoChapter[] = [
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Parasternal_long-axis_view_of_heart_ultrasound.gif",
             caption: "PLAX clip (Wikimedia)",
+            callouts: [
+              { label: "Ao root", detail: "Centered between RV and LA" },
+              { label: "Pericardium", detail: "Bright line; check for effusion" },
+            ],
           },
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Parasternal_short-axis_view_mitral_valve_level_ultrasound.gif",
             caption: "PSAX mitral level (Wikimedia)",
+            callouts: [
+              { label: "Mitral leaflets", detail: "Fish-mouth opening mid-level" },
+              { label: "LV shape", detail: "Round, not D-shaped; avoid off-axis" },
+            ],
           },
         ],
       },
@@ -242,10 +271,17 @@ export const echoChapters: EchoChapter[] = [
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Apical_four-chamber_view_ultrasound.gif",
             caption: "Apical 4-chamber clip (Wikimedia)",
+            callouts: [
+              { label: "Apex", detail: "True apex elongated; avoid foreshortening" },
+              { label: "AV valves", detail: "Tricuspid and mitral should be visible" },
+            ],
           },
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/3/37/Apical_two-chamber_view_ultrasound.gif",
             caption: "Apical 2-chamber (Wikimedia)",
+            callouts: [
+              { label: "LA/LV only", detail: "No RV; good for anterior/inferior walls" },
+            ],
           },
         ],
       },
@@ -297,10 +333,18 @@ export const echoChapters: EchoChapter[] = [
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Subcostal_four-chamber_view_ultrasound.gif",
             caption: "Subcostal 4C clip (Wikimedia)",
+            callouts: [
+              { label: "Pericardial space", detail: "Effusions seen dependently" },
+              { label: "Septum", detail: "Assess gross bowing or flattening" },
+            ],
           },
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/8/8b/IVC_ultrasound.PNG",
             caption: "IVC still with respiratory variation (Wikimedia)",
+            callouts: [
+              { label: "Measurement point", detail: "2–3 cm from RA junction" },
+              { label: "Collapsibility", detail: ">50% collapse suggests normal RA pressure" },
+            ],
           },
         ],
       },
@@ -314,6 +358,12 @@ export const echoChapters: EchoChapter[] = [
       { label: "When to subcostal", detail: "Poor parasternal/apical, COPD, post-op, ventilated." },
       { label: "IVC measure", detail: "2–3 cm from RA junction; end-expiration diameter." },
     ],
+    drill: {
+      title: "Volume check fast",
+      scenario: "You need a quick volume status in the ED.",
+      steps: ["Acquire subcostal 4C to confirm window", "Slide to IVC long axis; measure diameter", "Ask for sniff; estimate collapse"],
+      takeaway: "A fast IVC read plus global function guides escalation.",
+    },
   },
   {
     slug: "putting-it-together",

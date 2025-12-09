@@ -69,12 +69,16 @@ export const ultrasoundChapters: Chapter[] = [
         title: "Pocket device reference",
         images: [
           {
-            src: "https://www.researchgate.net/profile/Sorin-Dudea/publication/320122740/figure/fig1/AS:631646408806401@1527600781996/Photograph-of-the-pocket-sized-ultrasound-device-Images-were-displayed-on-a-smartphone.png",
-            caption: "Pocket ultrasound device (CC BY 4.0)",
+            src: "https://upload.wikimedia.org/wikipedia/commons/0/06/Ultrasound_machine.jpg",
+            caption: "Portable ultrasound device (Wikimedia, CC BY-SA)",
           },
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/4/49/Gallbladder_ultrasound.jpg",
-            caption: "Example abdominal probe view (public domain/Wikimedia)",
+            caption: "Example abdominal probe view (Wikimedia)",
+            callouts: [
+              { label: "GB lumen", detail: "Anechoic center with thin wall" },
+              { label: "Posterior wall", detail: "Should be sharp; confirm shadow vs artifact" },
+            ],
           },
         ],
       },
@@ -140,12 +144,16 @@ export const ultrasoundChapters: Chapter[] = [
         title: "Console essentials",
         images: [
           {
-            src: "https://www.researchgate.net/profile/Sorin-Dudea/publication/320122740/figure/fig1/AS:631646408806401@1527600781996/Photograph-of-the-pocket-sized-ultrasound-device-Images-were-displayed-on-a-smartphone.png",
-            caption: "Pocket device controls (CC BY 4.0)",
+            src: "https://upload.wikimedia.org/wikipedia/commons/0/06/Ultrasound_machine.jpg",
+            caption: "Portable device controls (Wikimedia, CC BY-SA)",
           },
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/8/8b/IVC_ultrasound.PNG",
             caption: "IVC ultrasound still for depth/gain reference (Wikimedia)",
+            callouts: [
+              { label: "IVC", detail: "Thin walls, respiratory variation" },
+              { label: "Hepatic vein", detail: "Confluence near RA—orientation check" },
+            ],
           },
         ],
       },
@@ -235,10 +243,18 @@ export const ultrasoundChapters: Chapter[] = [
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/4/49/Gallbladder_ultrasound.jpg",
             caption: "RUQ ultrasound with gallbladder (Wikimedia)",
+            callouts: [
+              { label: "Neck vs fundus", detail: "Identify to follow CBD caudally" },
+              { label: "Posterior enhancement", detail: "Confirms fluid-filled GB" },
+            ],
           },
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Ultrasound_Kidney_Normal.jpg",
             caption: "Normal kidney longitudinal (Wikimedia)",
+            callouts: [
+              { label: "Cortex", detail: "Should be brighter than medulla" },
+              { label: "Sinus", detail: "Hyperechoic center; avoid confusing with stones" },
+            ],
           },
         ],
       },

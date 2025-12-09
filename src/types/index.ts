@@ -3,6 +3,7 @@ export type ContentLink = { label: string; href: string };
 export type ImageItem = {
   src: string;
   caption?: string;
+  callouts?: { label: string; detail: string }[];
 };
 
 export type ContentSection =
