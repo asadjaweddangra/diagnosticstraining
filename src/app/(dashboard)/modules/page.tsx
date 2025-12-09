@@ -1,6 +1,7 @@
 import { getModules } from "@/lib/supabase/queries";
 import { ModuleCard } from "@/components/learning/module-card";
 import { TrackTabs } from "@/components/learning/track-tabs";
+import Link from "next/link";
 import { Module } from "@/types";
 import { Suspense } from "react";
 
@@ -23,17 +24,34 @@ export default async function ModulesPage({
   const grouped = groupModules(modules);
 
   return (
-    <div className="space-y-4">
-      <div className="rounded-3xl bg-white/80 p-6 shadow-lg ring-1 ring-slate-200">
+    <div className="space-y-6">
+      <div className="glass-panel p-6">
         <div className="flex flex-col gap-3">
           <div>
-            <h1 className="text-xl font-bold text-slate-900">
-              Tracks & Modules
-            </h1>
-            <p className="text-sm text-slate-600">
-              Follow a clear path per modality. Common modules appear in every
-              track.
+            <h1 className="text-xl font-bold text-ink">Choose Your Track</h1>
+            <p className="text-sm text-ink/70">
+              Jump into the immersive journeys for Ultrasound, Echo, or EKG. Legacy common modules are still available below.
             </p>
+          </div>
+          <div className="grid gap-3 md:grid-cols-3">
+            <TrackCard
+              href="/ultrasound"
+              title="Ultrasound Mastery"
+              summary="Physics to protocols with annotated images and drills."
+              tone="ultrasound"
+            />
+            <TrackCard
+              href="/echo"
+              title="Echo Essentials"
+              summary="Parasternal, apical, subcostal windows with good-vs-bad visuals."
+              tone="echo"
+            />
+            <TrackCard
+              href="/ekg"
+              title="EKG Excellence"
+              summary="Lead placement mastery, artifacts, and rapid escalation."
+              tone="ekg"
+            />
           </div>
           <Suspense fallback={null}>
             <TrackTabs />
@@ -61,8 +79,8 @@ function Section({ title, modules }: { title: string; modules: Module[] }) {
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
-        <p className="text-xs text-slate-500">
+        <h2 className="text-lg font-semibold text-ink">{title}</h2>
+        <p className="text-xs text-ink/60">
           {modules.length} module{modules.length > 1 ? "s" : ""}
         </p>
       </div>
@@ -72,6 +90,35 @@ function Section({ title, modules }: { title: string; modules: Module[] }) {
         ))}
       </div>
     </div>
+  );
+}
+
+function TrackCard({
+  href,
+  title,
+  summary,
+  tone,
+}: {
+  href: string;
+  title: string;
+  summary: string;
+  tone: "ultrasound" | "echo" | "ekg";
+}) {
+  const toneClass =
+    tone === "ultrasound"
+      ? "from-cyan-500/10 to-cyan-500/5 border-cyan-500/20"
+      : tone === "echo"
+        ? "from-rose-500/10 to-rose-500/5 border-rose-500/20"
+        : "from-amber-500/10 to-amber-500/5 border-amber-500/20";
+  return (
+    <Link
+      href={href}
+      className={`relative overflow-hidden rounded-2xl border p-4 shadow-lg backdrop-blur bg-gradient-to-br ${toneClass} transition hover:-translate-y-0.5`}
+    >
+      <h3 className="text-lg font-semibold text-ink">{title}</h3>
+      <p className="text-sm text-ink/70">{summary}</p>
+      <span className="mt-3 inline-flex text-xs font-semibold text-primary-200">Start journey →</span>
+    </Link>
   );
 }
 

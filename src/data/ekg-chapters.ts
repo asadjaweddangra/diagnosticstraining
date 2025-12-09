@@ -44,6 +44,10 @@ export const ekgChapters: EkgChapter[] = [
             src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/ConductionsystemoftheheartwithouttheHeart.png/512px-ConductionsystemoftheheartwithouttheHeart.png",
             caption: "Cardiac conduction system (CC BY-SA 3.0)",
           },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Normal_ECG.jpg",
+            caption: "Normal ECG baseline reference (Wikimedia, public domain)",
+          },
         ],
       },
       {

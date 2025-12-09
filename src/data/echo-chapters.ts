@@ -41,6 +41,10 @@ export const echoChapters: EchoChapter[] = [
         title: "Chamber orientation",
         images: [
           { src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Gray490.png", caption: "Heart chambers (Gray’s Anatomy, public domain)" },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Parasternal_long-axis_view_of_heart_ultrasound.gif",
+            caption: "Parasternal long-axis ultrasound (Wikimedia)",
+          },
         ],
       },
       {
@@ -177,6 +181,14 @@ export const echoChapters: EchoChapter[] = [
         title: "Anatomy reference",
         images: [
           { src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Gray490.png", caption: "Heart chambers (Gray’s Anatomy, public domain)" },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Parasternal_long-axis_view_of_heart_ultrasound.gif",
+            caption: "PLAX clip (Wikimedia)",
+          },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Parasternal_short-axis_view_mitral_valve_level_ultrasound.gif",
+            caption: "PSAX mitral level (Wikimedia)",
+          },
         ],
       },
       {
@@ -224,6 +236,20 @@ export const echoChapters: EchoChapter[] = [
         ],
       },
       {
+        type: "imageGallery",
+        title: "Apical views reference",
+        images: [
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Apical_four-chamber_view_ultrasound.gif",
+            caption: "Apical 4-chamber clip (Wikimedia)",
+          },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/3/37/Apical_two-chamber_view_ultrasound.gif",
+            caption: "Apical 2-chamber (Wikimedia)",
+          },
+        ],
+      },
+      {
         type: "alert",
         variant: "warning",
         title: "Avoid foreshortening",
@@ -263,6 +289,20 @@ export const echoChapters: EchoChapter[] = [
         type: "steps",
         title: "IVC view",
         steps: ["Indicator to head", "Aim toward spine; depth ~15–20 cm", "Measure 2–3 cm from RA junction; assess collapse"],
+      },
+      {
+        type: "imageGallery",
+        title: "Subcostal & IVC reference",
+        images: [
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Subcostal_four-chamber_view_ultrasound.gif",
+            caption: "Subcostal 4C clip (Wikimedia)",
+          },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/8/8b/IVC_ultrasound.PNG",
+            caption: "IVC still with respiratory variation (Wikimedia)",
+          },
+        ],
       },
       {
         type: "list",

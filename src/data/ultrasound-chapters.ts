@@ -72,6 +72,10 @@ export const ultrasoundChapters: Chapter[] = [
             src: "https://www.researchgate.net/profile/Sorin-Dudea/publication/320122740/figure/fig1/AS:631646408806401@1527600781996/Photograph-of-the-pocket-sized-ultrasound-device-Images-were-displayed-on-a-smartphone.png",
             caption: "Pocket ultrasound device (CC BY 4.0)",
           },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/4/49/Gallbladder_ultrasound.jpg",
+            caption: "Example abdominal probe view (public domain/Wikimedia)",
+          },
         ],
       },
     ],
@@ -138,6 +142,10 @@ export const ultrasoundChapters: Chapter[] = [
           {
             src: "https://www.researchgate.net/profile/Sorin-Dudea/publication/320122740/figure/fig1/AS:631646408806401@1527600781996/Photograph-of-the-pocket-sized-ultrasound-device-Images-were-displayed-on-a-smartphone.png",
             caption: "Pocket device controls (CC BY 4.0)",
+          },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/8/8b/IVC_ultrasound.PNG",
+            caption: "IVC ultrasound still for depth/gain reference (Wikimedia)",
           },
         ],
       },
@@ -223,6 +231,14 @@ export const ultrasoundChapters: Chapter[] = [
           {
             src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/EKG_12derivaciones.png/512px-EKG_12derivaciones.png",
             caption: "IVC vs aorta plane reference (schematic)",
+          },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/4/49/Gallbladder_ultrasound.jpg",
+            caption: "RUQ ultrasound with gallbladder (Wikimedia)",
+          },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Ultrasound_Kidney_Normal.jpg",
+            caption: "Normal kidney longitudinal (Wikimedia)",
           },
         ],
       },
@@ -322,6 +338,14 @@ export const ultrasoundChapters: Chapter[] = [
         items: ["Left lateral decubitus to move stones/gas", "Deep inspiration to drop liver/GB", "Heel-toe to avoid ribs; generous gel"],
       },
       {
+        type: "imageGallery",
+        title: "Gallbladder visuals",
+        images: [
+          { src: "https://upload.wikimedia.org/wikipedia/commons/4/49/Gallbladder_ultrasound.jpg", caption: "GB long axis with posterior wall visible" },
+          { src: "https://upload.wikimedia.org/wikipedia/commons/8/8b/IVC_ultrasound.PNG", caption: "Adjacent IVC reference in RUQ scan" },
+        ],
+      },
+      {
         type: "alert",
         variant: "info",
         title: "Artifact clues",
@@ -375,6 +399,14 @@ export const ultrasoundChapters: Chapter[] = [
         type: "checklist",
         title: "Bladder protocol",
         items: ["Transverse and sagittal views", "Posterior enhancement expected", "Post-void if ordered; note debris/clots"],
+      },
+      {
+        type: "imageGallery",
+        title: "Renal & bladder reference",
+        images: [
+          { src: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Ultrasound_Kidney_Normal.jpg", caption: "Normal kidney long axis (Wikimedia)" },
+          { src: "https://upload.wikimedia.org/wikipedia/commons/8/80/Bladder_ultrasound.JPG", caption: "Bladder with posterior enhancement (Wikimedia)" },
+        ],
       },
       {
         type: "list",
