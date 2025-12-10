@@ -38,7 +38,14 @@ export function FlashcardDeck({ cards }: Props) {
         <span>{flipped ? "Answer" : "Question"}</span>
       </div>
       <div className="glass-panel space-y-3 p-4">
-        <div className="text-sm text-ink/80">{flipped ? card.back : card.front}</div>
+        <div
+          className={cn(
+            "relative min-h-[140px] overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/5 p-4 ring-1 ring-white/10 text-sm text-ink/90",
+            "transition"
+          )}
+        >
+          <p>{flipped ? card.back : card.front}</p>
+        </div>
         <div className="flex flex-wrap gap-2 text-xs">
           <button
             onClick={() => setFlipped((f) => !f)}
@@ -51,7 +58,7 @@ export function FlashcardDeck({ cards }: Props) {
           </button>
           <button
             onClick={next}
-            className="rounded-xl bg-white/5 px-3 py-2 font-semibold text-ink ring-1 ring-white/10 hover:-translate-y-0.5"
+            className="rounded-xl bg-primary-500/15 px-3 py-2 font-semibold text-primary-100 ring-1 ring-primary-500/30 hover:-translate-y-0.5"
           >
             Next
           </button>

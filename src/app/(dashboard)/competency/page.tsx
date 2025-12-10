@@ -6,11 +6,10 @@ export default async function CompetencyPage() {
 
   return (
     <div className="space-y-4">
-      <div className="rounded-3xl bg-white/80 p-6 shadow-lg ring-1 ring-slate-200">
-        <h1 className="text-xl font-bold text-slate-900">Competency</h1>
-        <p className="text-sm text-slate-600">
-          Skills checklist and supervised/independent counts for ultrasound, echo,
-          and EKG.
+      <div className="glass-panel p-6">
+        <h1 className="text-xl font-bold text-ink">Competency</h1>
+        <p className="text-sm text-ink/70">
+          Skills checklist and supervised/independent counts for ultrasound, echo, and EKG.
         </p>
       </div>
       <CompetencyList requirements={requirements} />
