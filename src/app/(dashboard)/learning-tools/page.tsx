@@ -15,12 +15,12 @@ const tools = [
 export default function LearningToolsPage() {
   return (
     <div className="space-y-4">
-      <div className="glass-panel p-6">
+      <div className="rounded-xl bg-white border border-gray-200 shadow-sm p-6">
         <div className="flex items-center gap-3">
-          <Layers className="h-5 w-5 text-primary-200" />
+          <Layers className="h-5 w-5 text-primary-500" />
           <div>
-            <h1 className="text-xl font-bold text-ink">Learning Tools Hub</h1>
-            <p className="text-sm text-ink/70">All the accelerators in one place.</p>
+            <h1 className="text-xl font-bold text-gray-900">Learning Tools Hub</h1>
+            <p className="text-sm text-gray-600">All the accelerators in one place.</p>
           </div>
         </div>
       </div>
@@ -30,30 +30,30 @@ export default function LearningToolsPage() {
           <Link
             key={tool.title}
             href={tool.href}
-            className="group rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 transition hover:-translate-y-0.5"
+            className="group rounded-xl bg-white border border-gray-200 shadow-sm p-4 transition hover:shadow-md hover:-translate-y-0.5"
           >
-            <div className="flex items-center gap-2 text-sm font-semibold text-ink">
-              <PanelsTopLeft className="h-4 w-4 text-primary-200" />
+            <div className="flex items-center gap-2 text-sm font-semibold text-gray-900">
+              <PanelsTopLeft className="h-4 w-4 text-primary-500" />
               {tool.title}
             </div>
-            <p className="mt-1 text-sm text-ink/80">{tool.desc}</p>
-            <span className="text-xs font-semibold text-primary-200">Open →</span>
+            <p className="mt-1 text-sm text-gray-700">{tool.desc}</p>
+            <span className="text-xs font-semibold text-primary-600">Open →</span>
           </Link>
         ))}
       </div>
 
-      <div className="glass-panel grid gap-3 p-4 md:grid-cols-3">
+      <div className="rounded-xl bg-white border border-gray-200 shadow-sm grid gap-3 p-4 md:grid-cols-3">
         <StatCard title="Flashcards reviewed" value="50+" />
         <StatCard title="Quizzes passed" value="12" />
         <StatCard title="Sim drills completed" value="8" />
       </div>
 
-      <div className="rounded-2xl bg-gradient-to-r from-primary-500/15 to-rose-500/15 p-4 ring-1 ring-primary-500/20">
-        <div className="flex items-center gap-2 text-sm font-semibold text-ink">
-          <Brain className="h-4 w-4 text-primary-200" />
+      <div className="rounded-xl bg-primary-50 border border-primary-200 p-4">
+        <div className="flex items-center gap-2 text-sm font-semibold text-gray-900">
+          <Brain className="h-4 w-4 text-primary-600" />
           Suggested next step
         </div>
-        <p className="text-sm text-ink/80">Pick one flashcard deck and one simulation drill each session.</p>
+        <p className="text-sm text-gray-700">Pick one flashcard deck and one simulation drill each session.</p>
       </div>
     </div>
   );
@@ -61,9 +61,9 @@ export default function LearningToolsPage() {
 
 function StatCard({ title, value }: { title: string; value: string }) {
   return (
-    <div className="rounded-xl bg-white/5 p-3 ring-1 ring-white/10">
-      <p className="text-xs uppercase tracking-wide text-ink/60">{title}</p>
-      <p className="text-lg font-semibold text-ink">{value}</p>
+    <div className="rounded-lg bg-gray-50 border border-gray-200 p-3">
+      <p className="text-xs uppercase tracking-wide text-gray-500">{title}</p>
+      <p className="text-lg font-semibold text-gray-900">{value}</p>
     </div>
   );
 }

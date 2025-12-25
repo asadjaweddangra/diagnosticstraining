@@ -6,9 +6,9 @@ export default async function CompetencyPage() {
 
   return (
     <div className="space-y-4">
-      <div className="glass-panel p-6">
-        <h1 className="text-xl font-bold text-ink">Competency</h1>
-        <p className="text-sm text-ink/70">
+      <div className="rounded-xl bg-white border border-gray-200 shadow-sm p-6">
+        <h1 className="text-xl font-bold text-gray-900">Competency</h1>
+        <p className="text-sm text-gray-600">
           Skills checklist and supervised/independent counts for ultrasound, echo, and EKG.
         </p>
       </div>

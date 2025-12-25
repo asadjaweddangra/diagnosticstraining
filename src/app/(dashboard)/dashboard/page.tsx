@@ -1,7 +1,10 @@
 import { ModuleCard } from "@/components/learning/module-card";
 import { getModules } from "@/lib/supabase/queries";
-import { ArrowRight, Target, Trophy, BarChart3 } from "lucide-react";
+import { ArrowRight, Target, Trophy, BarChart3, Waves, HeartPulse, Activity } from "lucide-react";
 import Link from "next/link";
+import { ultrasoundChapters } from "@/data/ultrasound-chapters";
+import { echoChapters } from "@/data/echo-chapters";
+import { ekgChapters } from "@/data/ekg-chapters";
 
 export default async function DashboardPage() {
   const modules = await getModules();
@@ -16,6 +19,34 @@ export default async function DashboardPage() {
         <p className="text-gray-600 mt-1">
           Master ultrasound, echocardiography, and ECG/EKG with interactive training modules, quizzes, and simulations.
         </p>
+      </div>
+
+      {/* Track Overview Cards */}
+      <div className="grid gap-4 md:grid-cols-3">
+        <TrackCard
+          href="/ultrasound"
+          title="Ultrasound"
+          icon={<Waves className="h-5 w-5" />}
+          chapters={ultrasoundChapters.length}
+          summary="Physics, abdomen, vascular, troubleshooting"
+          tone="ultrasound"
+        />
+        <TrackCard
+          href="/echo"
+          title="Echo"
+          icon={<HeartPulse className="h-5 w-5" />}
+          chapters={echoChapters.length}
+          summary="PLAX/PSAX, apical, subcostal, IVC"
+          tone="echo"
+        />
+        <TrackCard
+          href="/ekg"
+          title="EKG"
+          icon={<Activity className="h-5 w-5" />}
+          chapters={ekgChapters.length}
+          summary="Placement, artifacts, rhythms, escalation"
+          tone="ekg"
+        />
       </div>
 
       {/* Learning Journey Card */}
@@ -83,14 +114,68 @@ export default async function DashboardPage() {
 
       {/* Module Grid */}
       <div>
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Training Modules</h2>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-semibold text-gray-900">All Training Modules</h2>
+          <Link href="/modules" className="text-sm text-primary-600 hover:text-primary-700 font-medium">
+            View all →
+          </Link>
+        </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {modules.map((module) => (
+          {modules.slice(0, 6).map((module) => (
             <ModuleCard key={module.id} module={module} />
           ))}
         </div>
       </div>
     </div>
+  );
+}
+
+function TrackCard({
+  href,
+  title,
+  icon,
+  chapters,
+  summary,
+  tone,
+}: {
+  href: string;
+  title: string;
+  icon: React.ReactNode;
+  chapters: number;
+  summary: string;
+  tone: "ultrasound" | "echo" | "ekg";
+}) {
+  const toneClass =
+    tone === "ultrasound"
+      ? "bg-cyan-50 border-cyan-200 hover:bg-cyan-100"
+      : tone === "echo"
+        ? "bg-rose-50 border-rose-200 hover:bg-rose-100"
+        : "bg-amber-50 border-amber-200 hover:bg-amber-100";
+  
+  const iconColor =
+    tone === "ultrasound"
+      ? "text-cyan-600"
+      : tone === "echo"
+        ? "text-rose-600"
+        : "text-amber-600";
+
+  return (
+    <Link
+      href={href}
+      className={`rounded-xl border p-5 shadow-sm ${toneClass} transition hover:shadow-md hover:-translate-y-0.5`}
+    >
+      <div className="flex items-center gap-3 mb-3">
+        <div className={`${iconColor}`}>{icon}</div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+          <p className="text-xs text-gray-600">{chapters} chapters</p>
+        </div>
+      </div>
+      <p className="text-sm text-gray-700 mb-3">{summary}</p>
+      <span className="text-xs font-semibold text-primary-600 inline-flex items-center gap-1">
+        Start track <ArrowRight size={12} />
+      </span>
+    </Link>
   );
 }
 

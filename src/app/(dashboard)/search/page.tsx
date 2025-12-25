@@ -61,12 +61,12 @@ export default function SearchPage() {
 
   return (
     <div className="space-y-6">
-      <div className="glass-panel p-6">
+      <div className="rounded-xl bg-white border border-gray-200 shadow-sm p-6">
         <div className="flex items-center gap-3">
-          <Search className="h-5 w-5 text-primary-200" />
+          <Search className="h-5 w-5 text-primary-500" />
           <div>
-            <h1 className="text-xl font-semibold text-ink">Search</h1>
-            <p className="text-sm text-ink/70">Find chapters, flashcards, and drills across all tracks.</p>
+            <h1 className="text-xl font-semibold text-gray-900">Search</h1>
+            <p className="text-sm text-gray-600">Find chapters, flashcards, and drills across all tracks.</p>
           </div>
         </div>
         <div className="mt-4 flex flex-wrap gap-3">
@@ -74,7 +74,7 @@ export default function SearchPage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search anatomy, artifacts, drills..."
-            className="w-full max-w-lg rounded-xl bg-white/5 px-4 py-2 text-sm text-ink ring-1 ring-white/10 focus:outline-none"
+            className="w-full max-w-lg rounded-lg bg-white border border-gray-200 px-4 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
           />
           <div className="flex gap-2 text-xs">
             {["all", "ultrasound", "echo", "ekg"].map((t) => (
@@ -82,11 +82,11 @@ export default function SearchPage() {
                 key={t}
                 onClick={() => setTrack(t as typeof track)}
                 className={`
-                  rounded-xl px-3 py-2 font-semibold ring-1 transition
+                  rounded-lg px-3 py-2 font-semibold border transition
                   ${
                     track === t
-                      ? "bg-primary-500/15 text-primary-100 ring-primary-500/30"
-                      : "bg-white/5 text-ink ring-white/10"
+                      ? "bg-primary-500 text-white border-primary-600"
+                      : "bg-white text-gray-700 border-gray-200 hover:bg-gray-50"
                   }
                 `}
               >
@@ -99,20 +99,20 @@ export default function SearchPage() {
 
       <div className="space-y-3">
         {results.length === 0 ? (
-          <p className="text-sm text-ink/60">Type to search the entire training site.</p>
+          <p className="text-sm text-gray-500">Type to search the entire training site.</p>
         ) : (
           results.map((r) => (
             <Link
               key={`${r.href}-${r.title}`}
               href={r.href}
-              className="flex items-center justify-between rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 transition hover:-translate-y-0.5"
+              className="flex items-center justify-between rounded-xl bg-white border border-gray-200 shadow-sm p-4 transition hover:shadow-md hover:-translate-y-0.5"
             >
               <div>
-                <p className="text-xs uppercase tracking-wide text-ink/60">{r.track}</p>
-                <p className="text-sm font-semibold text-ink">{r.title}</p>
-                <p className="text-xs text-ink/70 line-clamp-2">{r.snippet}</p>
+                <p className="text-xs uppercase tracking-wide text-gray-500">{r.track}</p>
+                <p className="text-sm font-semibold text-gray-900">{r.title}</p>
+                <p className="text-xs text-gray-600 line-clamp-2">{r.snippet}</p>
               </div>
-              <ArrowRight className="h-4 w-4 text-ink/60" />
+              <ArrowRight className="h-4 w-4 text-gray-400" />
             </Link>
           ))
         )}

@@ -29,15 +29,14 @@ const steps = [
 export default function GettingStartedPage() {
   return (
     <div className="space-y-6">
-      <div className="glass-panel relative overflow-hidden p-6">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(14,165,233,0.2),transparent_45%),radial-gradient(circle_at_80%_0%,rgba(244,63,94,0.15),transparent_40%)]" />
-        <div className="relative flex flex-col gap-2">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-primary-100 ring-1 ring-white/10">
+      <div className="rounded-xl bg-white border border-gray-200 shadow-sm p-6">
+        <div className="flex flex-col gap-2">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary-50 border border-primary-200 px-3 py-1 text-xs font-semibold text-primary-700">
             <Sparkles size={14} />
             Start here
           </div>
-          <h1 className="text-2xl font-bold text-ink">Getting Started</h1>
-          <p className="text-sm text-ink/80">
+          <h1 className="text-2xl font-bold text-gray-900">Getting Started</h1>
+          <p className="text-sm text-gray-600">
             A guided path from zero to competent: foundations, equipment, safety, then modality tracks with drills.
           </p>
         </div>
@@ -45,10 +44,10 @@ export default function GettingStartedPage() {
 
       <div className="grid gap-4 md:grid-cols-2">
         {steps.map((s) => (
-          <Link key={s.title} href={s.href} className="glass-panel group flex flex-col gap-2 p-4 transition hover:-translate-y-0.5">
-            <p className="text-xs uppercase tracking-wide text-ink/60">{s.title}</p>
-            <p className="text-sm text-ink/80">{s.body}</p>
-            <span className="text-xs font-semibold text-primary-200">Open →</span>
+          <Link key={s.title} href={s.href} className="rounded-xl bg-white border border-gray-200 shadow-sm group flex flex-col gap-2 p-4 transition hover:shadow-md hover:-translate-y-0.5">
+            <p className="text-xs uppercase tracking-wide text-gray-500">{s.title}</p>
+            <p className="text-sm text-gray-700">{s.body}</p>
+            <span className="text-xs font-semibold text-primary-600">Open →</span>
           </Link>
         ))}
       </div>
@@ -81,14 +80,14 @@ function Card({ icon, title, body, href }: { icon: React.ReactNode; title: strin
   return (
     <Link
       href={href}
-      className="flex flex-col gap-2 rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 transition hover:-translate-y-0.5"
+      className="flex flex-col gap-2 rounded-xl bg-white border border-gray-200 shadow-sm p-4 transition hover:shadow-md hover:-translate-y-0.5"
     >
-      <div className="flex items-center gap-2 text-sm font-semibold text-ink">
+      <div className="flex items-center gap-2 text-sm font-semibold text-gray-900">
         {icon}
         {title}
       </div>
-      <p className="text-xs text-ink/70">{body}</p>
-      <span className="text-xs font-semibold text-primary-200">Open →</span>
+      <p className="text-xs text-gray-600">{body}</p>
+      <span className="text-xs font-semibold text-primary-600">Open →</span>
     </Link>
   );
 }

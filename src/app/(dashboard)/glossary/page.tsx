@@ -18,23 +18,23 @@ export default function GlossaryPage() {
 
   return (
     <div className="space-y-4">
-      <div className="glass-panel p-6">
-        <h1 className="text-xl font-bold text-ink">Glossary</h1>
-        <p className="text-sm text-ink/70">Key terms across ultrasound, echo, and EKG.</p>
+      <div className="rounded-xl bg-white border border-gray-200 shadow-sm p-6">
+        <h1 className="text-xl font-bold text-gray-900">Glossary</h1>
+        <p className="text-sm text-gray-600">Key terms across ultrasound, echo, and EKG.</p>
         <div className="mt-4 flex flex-wrap gap-3">
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search terms..."
-            className="w-full max-w-lg rounded-xl bg-white/5 px-4 py-2 text-sm text-ink ring-1 ring-white/10 focus:outline-none"
+            className="w-full max-w-lg rounded-lg bg-white border border-gray-200 px-4 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
           />
           <div className="flex gap-2 text-xs">
             {modalities.map((m) => (
               <button
                 key={m}
                 onClick={() => setModality(m)}
-                className={`rounded-xl px-3 py-2 font-semibold ring-1 transition ${
-                  modality === m ? "bg-primary-500/15 text-primary-100 ring-primary-500/30" : "bg-white/5 text-ink ring-white/10"
+                className={`rounded-lg px-3 py-2 font-semibold border transition ${
+                  modality === m ? "bg-primary-500 text-white border-primary-600" : "bg-white text-gray-700 border-gray-200 hover:bg-gray-50"
                 }`}
               >
                 {m}
@@ -46,15 +46,15 @@ export default function GlossaryPage() {
 
       <div className="grid gap-3 md:grid-cols-2">
         {results.map((item) => (
-          <div key={item.term} className="glass-panel p-4">
+          <div key={item.term} className="rounded-xl bg-white border border-gray-200 shadow-sm p-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-semibold text-ink">{item.term}</h3>
-              <span className="text-[11px] uppercase tracking-wide text-ink/60">{item.modality ?? "general"}</span>
+              <h3 className="text-sm font-semibold text-gray-900">{item.term}</h3>
+              <span className="text-[11px] uppercase tracking-wide text-gray-500">{item.modality ?? "general"}</span>
             </div>
-            <p className="mt-1 text-sm text-ink/80">{item.definition}</p>
+            <p className="mt-1 text-sm text-gray-700">{item.definition}</p>
           </div>
         ))}
-        {results.length === 0 ? <p className="text-sm text-ink/60">No terms found.</p> : null}
+        {results.length === 0 ? <p className="text-sm text-gray-500">No terms found.</p> : null}
       </div>
     </div>
   );

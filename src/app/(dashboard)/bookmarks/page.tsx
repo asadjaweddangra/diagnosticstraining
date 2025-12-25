@@ -9,30 +9,30 @@ export default function BookmarksPage() {
 
   return (
     <div className="space-y-4">
-      <div className="glass-panel p-6">
-        <h1 className="text-xl font-bold text-ink">Bookmarks</h1>
-        <p className="text-sm text-ink/70">Saved chapters, modules, and tools for quick return.</p>
+      <div className="rounded-xl bg-white border border-gray-200 shadow-sm p-6">
+        <h1 className="text-xl font-bold text-gray-900">Bookmarks</h1>
+        <p className="text-sm text-gray-600">Saved chapters, modules, and tools for quick return.</p>
       </div>
 
       {items.length === 0 ? (
-        <p className="text-sm text-ink/60">No bookmarks yet. Add any chapter or module to see it here.</p>
+        <p className="text-sm text-gray-500">No bookmarks yet. Add any chapter or module to see it here.</p>
       ) : (
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {items.map((item) => (
-            <div key={item.href} className="glass-panel flex flex-col gap-2 p-4">
-              <div className="flex items-center justify-between text-xs uppercase tracking-wide text-ink/60">
+            <div key={item.href} className="rounded-xl bg-white border border-gray-200 shadow-sm flex flex-col gap-2 p-4">
+              <div className="flex items-center justify-between text-xs uppercase tracking-wide text-gray-500">
                 <span>{item.track ?? "general"}</span>
                 <button
                   onClick={() => toggle(item)}
-                  className="rounded-lg bg-white/5 px-2 py-1 text-ink ring-1 ring-white/10 hover:-translate-y-0.5"
+                  className="rounded-lg bg-gray-100 border border-gray-200 px-2 py-1 text-gray-700 hover:bg-gray-200 transition"
                 >
                   <BookmarkMinus size={14} />
                 </button>
               </div>
-              <Link href={item.href} className="text-sm font-semibold text-ink hover:underline">
+              <Link href={item.href} className="text-sm font-semibold text-gray-900 hover:underline">
                 {item.title}
               </Link>
-              <Link href={item.href} className="inline-flex items-center gap-1 text-xs font-semibold text-primary-200">
+              <Link href={item.href} className="inline-flex items-center gap-1 text-xs font-semibold text-primary-600">
                 Open <BookmarkPlus size={14} />
               </Link>
             </div>

@@ -25,11 +25,11 @@ export default async function ModulesPage({
 
   return (
     <div className="space-y-6">
-      <div className="glass-panel p-6">
+      <div className="rounded-xl bg-white border border-gray-200 shadow-sm p-6">
         <div className="flex flex-col gap-3">
           <div>
-            <h1 className="text-xl font-bold text-ink">Choose Your Track</h1>
-            <p className="text-sm text-ink/70">
+            <h1 className="text-xl font-bold text-gray-900">Choose Your Track</h1>
+            <p className="text-sm text-gray-600">
               Jump into the immersive journeys for Ultrasound, Echo, or EKG. Legacy common modules are still available below.
             </p>
           </div>
@@ -79,8 +79,8 @@ function Section({ title, modules }: { title: string; modules: Module[] }) {
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-ink">{title}</h2>
-        <p className="text-xs text-ink/60">
+        <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
+        <p className="text-xs text-gray-500">
           {modules.length} module{modules.length > 1 ? "s" : ""}
         </p>
       </div>
@@ -106,18 +106,18 @@ function TrackCard({
 }) {
   const toneClass =
     tone === "ultrasound"
-      ? "from-cyan-500/10 to-cyan-500/5 border-cyan-500/20"
+      ? "bg-cyan-50 border-cyan-200 hover:bg-cyan-100"
       : tone === "echo"
-        ? "from-rose-500/10 to-rose-500/5 border-rose-500/20"
-        : "from-amber-500/10 to-amber-500/5 border-amber-500/20";
+        ? "bg-rose-50 border-rose-200 hover:bg-rose-100"
+        : "bg-amber-50 border-amber-200 hover:bg-amber-100";
   return (
     <Link
       href={href}
-      className={`relative overflow-hidden rounded-2xl border p-4 shadow-lg backdrop-blur bg-gradient-to-br ${toneClass} transition hover:-translate-y-0.5`}
+      className={`relative overflow-hidden rounded-xl border p-4 shadow-sm ${toneClass} transition hover:shadow-md hover:-translate-y-0.5`}
     >
-      <h3 className="text-lg font-semibold text-ink">{title}</h3>
-      <p className="text-sm text-ink/70">{summary}</p>
-      <span className="mt-3 inline-flex text-xs font-semibold text-primary-200">Start journey →</span>
+      <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+      <p className="text-sm text-gray-700">{summary}</p>
+      <span className="mt-3 inline-flex text-xs font-semibold text-primary-600">Start journey →</span>
     </Link>
   );
 }
