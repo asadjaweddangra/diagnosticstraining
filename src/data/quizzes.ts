@@ -50,6 +50,16 @@ export const quizzes: Quiz[] = [
         answer: "Depth-specific brightness",
         rationale: "TGC compensates for attenuation by depth.",
       },
+      {
+        id: "q6",
+        type: "image_based",
+        difficulty: "medium",
+        question: "What structure is labeled by the bright wall in this RUQ image?",
+        image_url: "https://upload.wikimedia.org/wikipedia/commons/4/49/Gallbladder_ultrasound.jpg",
+        options: ["Portal vein", "Gallbladder wall", "Pancreas", "Common bile duct"],
+        answer: "Gallbladder wall",
+        rationale: "The echogenic line with posterior enhancement corresponds to the gallbladder wall.",
+      },
     ],
   },
   {
@@ -101,6 +111,16 @@ export const quizzes: Quiz[] = [
         answer: "Tamponade concern",
         rationale: "RA/RV collapse suggests elevated pericardial pressure.",
       },
+      {
+        id: "q26",
+        type: "image_based",
+        difficulty: "medium",
+        question: "This PLAX view shows which finding?",
+        image_url: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Parasternal_long-axis_view_of_heart_ultrasound.gif",
+        options: ["Pericardial effusion", "Severe mitral regurgitation", "Apical foreshortening", "Aortic stenosis jet"],
+        answer: "Pericardial effusion",
+        rationale: "Anechoic space surrounding the heart in PLAX indicates effusion.",
+      },
     ],
   },
   {
@@ -151,6 +171,16 @@ export const quizzes: Quiz[] = [
         options: ["RA", "LA", "RL", "LL"],
         answer: "RL",
         rationale: "Right leg is ground in standard configuration.",
+      },
+      {
+        id: "q36",
+        type: "image_based",
+        difficulty: "medium",
+        question: "Which lead placement is shown in the highlighted position?",
+        image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/EKG_12derivaciones.png/512px-EKG_12derivaciones.png",
+        options: ["V1", "V2", "V4", "V6"],
+        answer: "V2",
+        rationale: "Image shows second precordial lead at 4th ICS left sternal border.",
       },
     ],
   },
@@ -331,4 +361,5 @@ export const quizzes: Quiz[] = [
     ],
   },
 ];
+
 

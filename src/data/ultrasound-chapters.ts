@@ -534,5 +534,210 @@ export const ultrasoundChapters: Chapter[] = [
       takeaway: "Run the ladder, don’t guess randomly.",
     },
   },
+  {
+    slug: "pelvic-ultrasound",
+    id: "us-09",
+    track: "ultrasound",
+    chapter: 9,
+    total: 9,
+    title: "Pelvic Ultrasound",
+    duration: "22 min",
+    xp: 150,
+    summary: "Transabdominal vs transvaginal views, uterus/ovaries, free fluid.",
+    story:
+      "You’re asked to scan pelvic pain with a full bladder. You need uterus in long/short and ovaries with flow.",
+    objectives: [
+      "Prep full bladder and explain comfort steps",
+      "Acquire uterus long/short, measure endometrium",
+      "Identify ovaries and assess free fluid",
+    ],
+    sections: [
+      {
+        type: "steps",
+        title: "Acquisition",
+        steps: [
+          {
+            title: "Prep",
+            description: "Full bladder for transabdominal; consent and chaperone if transvaginal.",
+            tips: ["Warm gel, clear explanation", "Drape for privacy"],
+            warnings: ["Stop if pain; offer restroom break after scan"],
+          },
+          {
+            title: "Uterus",
+            description: "Long and short axis; measure length/AP; endometrial stripe thickness.",
+            tips: ["Angle to follow cervix-fundus curve"],
+          },
+          {
+            title: "Ovaries",
+            description: "Find iliac vessels, slide medial; measure in 3 dimensions; color for flow.",
+          },
+        ],
+      },
+      {
+        type: "annotatedImage",
+        title: "Uterus long axis",
+        src: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Sagittal_ultrasound_uterus.jpg",
+        alt: "Sagittal uterus ultrasound",
+        caption: "Long-axis uterus with endometrial stripe.",
+        annotations: [
+          { x: 55, y: 40, label: "Endometrium", description: "Measure thickness; midline echogenic stripe." },
+          { x: 40, y: 60, label: "Myometrium", description: "Homogeneous muscle layer." },
+          { x: 65, y: 75, label: "Cervix", description: "Inferior portion; keep included in long axis." },
+        ],
+      },
+      {
+        type: "conceptDiagram",
+        title: "Approach selection",
+        diagramType: "comparison",
+        data: {
+          left: { title: "Transabdominal", points: ["Full bladder", "Global view", "Lower frequency"] },
+          right: { title: "Transvaginal", points: ["Empty bladder", "High detail", "Patient consent/chaperone"] },
+        },
+      },
+    ],
+    quickReference: [
+      { label: "Endometrium", detail: "Measure double-layer in long axis." },
+      { label: "Free fluid", detail: "Look in posterior cul-de-sac." },
+    ],
+    drill: {
+      title: "Find the ovary",
+      scenario: "You can’t see ovaries transabdominally.",
+      steps: ["Locate iliac vessels", "Angle medial/superior", "Ask to partially empty bladder if overfull"],
+    },
+  },
+  {
+    slug: "thyroid-ultrasound",
+    id: "us-10",
+    track: "ultrasound",
+    chapter: 10,
+    total: 10,
+    title: "Thyroid Ultrasound",
+    duration: "18 min",
+    xp: 140,
+    summary: "Linear probe technique, nodule characterization, TI-RADS basics.",
+    story: "A neck lump needs evaluation. You must document both lobes and characterize nodules accurately.",
+    objectives: [
+      "Position with neck extension and linear probe",
+      "Scan lobes + isthmus long/short",
+      "Describe nodules (composition, echogenicity, margins, calcifications)",
+    ],
+    sections: [
+      {
+        type: "steps",
+        title: "Technique",
+        steps: [
+          {
+            title: "Position",
+            description: "Pillow under shoulders, chin up; generous gel.",
+          },
+          {
+            title: "Survey",
+            description: "Long and transverse sweeps of both lobes and isthmus.",
+          },
+          {
+            title: "Nodules",
+            description: "Freeze/measure in 3 planes; note TI-RADS features.",
+            tips: ["Record Doppler flow if vascular", "Cine through calcifications"],
+          },
+        ],
+      },
+      {
+        type: "annotatedImage",
+        title: "Transverse thyroid",
+        src: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Normal_thyroid_ultrasound.jpg",
+        alt: "Transverse thyroid ultrasound",
+        caption: "Transverse view showing thyroid lobe.",
+        annotations: [
+          { x: 45, y: 55, label: "Thyroid lobe", description: "Homogeneous echotexture." },
+          { x: 70, y: 65, label: "Carotid", description: "Round anechoic; avoid compression." },
+          { x: 30, y: 65, label: "Trachea", description: "Midline with shadowing rings." },
+        ],
+      },
+      {
+        type: "conceptDiagram",
+        title: "TI-RADS cues",
+        diagramType: "hierarchy",
+        data: {
+          top: { title: "Nodule features", description: "Score composition/echogenicity/margins" },
+          children: [
+            { title: "Composition", icon: "🧊", description: "Cystic, spongiform, solid" },
+            { title: "Margins", icon: "📐", description: "Smooth vs irregular" },
+            { title: "Echogenicity", icon: "💡", description: "Hyperechoic, iso, hypo" },
+          ],
+        },
+      },
+    ],
+    quickReference: [
+      { label: "Color box", detail: "Narrow and align with vessel flow for best sensitivity." },
+      { label: "Calcifications", detail: "Punctate echogenic foci with shadow or comet-tail." },
+    ],
+  },
+  {
+    slug: "dvt-protocol",
+    id: "us-11",
+    track: "ultrasound",
+    chapter: 11,
+    total: 11,
+    title: "DVT Compression Protocol",
+    duration: "16 min",
+    xp: 130,
+    summary: "2-point vs full compression, augmentation, pitfalls.",
+    story: "Leg swelling: you must compress common femoral and popliteal veins quickly and confidently.",
+    objectives: [
+      "Perform 2-point compression (CFV + popliteal)",
+      "Differentiate vein vs artery, identify DVT",
+      "Use augmentation and distal compression safely",
+    ],
+    sections: [
+      {
+        type: "steps",
+        title: "Compression steps",
+        steps: [
+          { description: "Start at CFV/greater saphenous junction; compress every 1-2 cm.", title: "CFV" },
+          { description: "Follow femoral vein to popliteal fossa; compress in transverse.", title: "Femoral course" },
+          {
+            description: "Popliteal vein in fossa; compress and assess for clot/mobility.",
+            title: "Popliteal",
+            warnings: ["Avoid excessive pressure causing pain."],
+          },
+        ],
+      },
+      {
+        type: "annotatedImage",
+        title: "CFV transverse",
+        src: "https://upload.wikimedia.org/wikipedia/commons/4/48/DVT_ultrasound_CF_Vein.jpg",
+        alt: "CFV ultrasound",
+        caption: "Transverse CFV with artery adjacent.",
+        annotations: [
+          { x: 45, y: 55, label: "CFV", description: "Compressible vein; non-compressible suggests DVT." },
+          { x: 65, y: 60, label: "CFA", description: "Artery pulsatile, non-compressible." },
+        ],
+      },
+      {
+        type: "conceptDiagram",
+        title: "2-point vs full",
+        diagramType: "comparison",
+        data: {
+          left: { title: "2-point", points: ["CFV + popliteal", "Rapid screening", "Good in ED"] },
+          right: { title: "Full leg", points: ["Includes calf veins", "More time", "For high suspicion/negative 2-point"] },
+        },
+      },
+      {
+        type: "comparisonSlider",
+        title: "Compressible vs non-compressible",
+        good: { src: "https://upload.wikimedia.org/wikipedia/commons/4/48/DVT_ultrasound_CF_Vein.jpg", label: "Compressible" },
+        bad: { src: "https://upload.wikimedia.org/wikipedia/commons/4/48/DVT_ultrasound_CF_Vein.jpg", label: "Non-compressible" },
+      },
+    ],
+    quickReference: [
+      { label: "Probe", detail: "Linear 7–15 MHz; more gel for popliteal." },
+      { label: "Angle", detail: "Keep 90° for true compression." },
+    ],
+    drill: {
+      title: "Is it DVT?",
+      scenario: "Vein doesn’t collapse fully.",
+      steps: ["Confirm vein vs artery", "Increase pressure gently", "Use color—lack of flow supports thrombus"],
+    },
+  },
 ];
 

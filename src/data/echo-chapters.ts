@@ -405,5 +405,67 @@ export const echoChapters: EchoChapter[] = [
       takeaway: "Repetition builds speed; stick to the sequence.",
     },
   },
+  {
+    slug: "echo-pathology-patterns",
+    id: "echo-08",
+    track: "echo",
+    chapter: 8,
+    total: 8,
+    title: "Echo Pathology Patterns",
+    duration: "20 min",
+    xp: 150,
+    summary: "Effusions, LV dysfunction, RV strain, valve abnormalities.",
+    story: "You’re asked if the patient is in tamponade or RV strain. You need pattern recognition fast.",
+    objectives: [
+      "Recognize pericardial effusion/tamponade cues",
+      "Identify LV systolic dysfunction patterns",
+      "Spot RV strain/D-sign and valve lesions",
+    ],
+    sections: [
+      {
+        type: "annotatedImage",
+        title: "Pericardial effusion cues",
+        src: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Parasternal_long-axis_view_of_heart_ultrasound.gif",
+        alt: "PLAX with effusion",
+        caption: "Anechoic stripe around heart.",
+        annotations: [
+          { x: 60, y: 50, label: "Effusion", description: "Anechoic space posterior to LV." },
+          { x: 40, y: 45, label: "RV wall", description: "Look for diastolic collapse." },
+        ],
+      },
+      {
+        type: "conceptDiagram",
+        title: "Pattern quick-cuts",
+        diagramType: "hierarchy",
+        data: {
+          top: { title: "Echo patterns", description: "Rapid mental model" },
+          children: [
+            { title: "Effusion", icon: "💧", description: "Anechoic stripe; RA/RV collapse" },
+            { title: "LV dysfunction", icon: "📉", description: "Global hypokinesis; low EF" },
+            { title: "RV strain", icon: "➡️", description: "D-sign in PSAX; septal flattening" },
+          ],
+        },
+      },
+      {
+        type: "comparison",
+        title: "RV strain vs normal",
+        leftLabel: "Normal PSAX",
+        rightLabel: "RV strain (D-sign)",
+        rows: [
+          { left: "Circular LV", right: "Septal flattening" },
+          { left: "RV smaller than LV", right: "RV enlarged" },
+        ],
+      },
+    ],
+    quickReference: [
+      { label: "Tamponade", detail: "RA/RV diastolic collapse + plethoric IVC." },
+      { label: "RV strain", detail: "D-sign, TAPSE low, consider PE." },
+    ],
+    drill: {
+      title: "Is it tamponade?",
+      scenario: "Large effusion, borderline vitals.",
+      steps: ["Check RA/RV collapse", "IVC plethora", "Escalate to team"],
+    },
+  },
 ];
 

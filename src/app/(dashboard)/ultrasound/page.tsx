@@ -10,8 +10,8 @@ export default function UltrasoundTrackPage() {
       <JourneyHeader
         track="ultrasound"
         chapter={1}
-        total={8}
-        duration="~2.5 hrs total"
+        total={ultrasoundChapters.length}
+        duration="~3 hrs total"
         xp={ultrasoundChapters.reduce((sum, c) => sum + c.xp, 0)}
         title="Ultrasound Mastery Track"
         summary="From physics to protocols and troubleshooting. Follow the clinical journey, chapter by chapter."
@@ -26,7 +26,7 @@ export default function UltrasoundTrackPage() {
           >
             <div className="flex items-center justify-between text-xs text-ink/70">
               <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-cyan-100">
-                Chapter {chapter.chapter}/{chapter.total}
+                Chapter {chapter.chapter}/{ultrasoundChapters.length}
               </span>
               <span>{chapter.duration} • +{chapter.xp} XP</span>
             </div>
@@ -48,4 +48,5 @@ export default function UltrasoundTrackPage() {
     </div>
   );
 }
+
 

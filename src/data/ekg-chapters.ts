@@ -304,5 +304,63 @@ export const ekgChapters: EkgChapter[] = [
       steps: ["Pause immediately", "Reassure with plain language", "Offer chaperone/family; resume only if comfortable"],
     },
   },
+  {
+    slug: "stemi-recognition",
+    id: "ekg-07",
+    track: "ekg",
+    chapter: 7,
+    total: 7,
+    title: "STEMI Recognition",
+    duration: "18 min",
+    xp: 140,
+    summary: "ST elevation criteria, reciprocal changes, localization.",
+    story: "Chest pain in triage—recognize STEMI patterns fast and escalate.",
+    objectives: [
+      "Apply ST elevation criteria in contiguous leads",
+      "Identify reciprocal changes",
+      "Localize infarct territory",
+    ],
+    sections: [
+      {
+        type: "conceptDiagram",
+        title: "Territory map",
+        diagramType: "comparison",
+        data: {
+          left: { title: "Inferior (II, III, aVF)", points: ["Reciprocal in I, aVL", "Often RCA"] },
+          right: { title: "Anterior/Septal (V1–V4)", points: ["Reciprocal in inferior", "Often LAD"] },
+        },
+      },
+      {
+        type: "annotatedImage",
+        title: "Inferior STEMI example",
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/EKG_12derivaciones.png/512px-EKG_12derivaciones.png",
+        alt: "12-lead EKG",
+        caption: "ST elevation in II, III, aVF; depression in I, aVL.",
+        annotations: [
+          { x: 25, y: 40, label: "II/III/aVF", description: "Elevation indicates inferior territory." },
+          { x: 70, y: 30, label: "I/aVL", description: "Reciprocal depression supports inferior STEMI." },
+        ],
+      },
+      {
+        type: "steps",
+        title: "Rapid checklist",
+        steps: [
+          { title: "Calibration", description: "Confirm 25 mm/s, 10 mm/mV." },
+          { title: "Elevation", description: "ST elevation in contiguous leads meeting criteria." },
+          { title: "Reciprocal", description: "Check opposing leads for depression." },
+          { title: "Act", description: "Localize territory and activate STEMI pathway." },
+        ],
+      },
+    ],
+    quickReference: [
+      { label: "Criteria", detail: "≥1 mm limb leads; ≥2 mm V2/V3 (sex/age adjusted)." },
+      { label: "Posterior", detail: "V1–V3 depression → consider posterior leads." },
+    ],
+    drill: {
+      title: "Is it STEMI?",
+      scenario: "ST elevation in II, III, aVF with reciprocal depression in I, aVL.",
+      steps: ["Confirm mm criteria", "Identify reciprocal changes", "Notify/activate immediately"],
+    },
+  },
 ];
 

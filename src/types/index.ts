@@ -26,7 +26,15 @@ export type ContentSection =
   | {
       type: "steps";
       title?: string;
-      steps: string[];
+      steps:
+        | {
+            title?: string;
+            description: string;
+            tips?: string[];
+            warnings?: string[];
+            image?: string;
+          }[]
+        | string[];
       footnote?: string;
     }
   | {
@@ -36,6 +44,12 @@ export type ContentSection =
       leftLabel?: string;
       rightLabel?: string;
       body?: string;
+    }
+  | {
+      type: "comparisonSlider";
+      title?: string;
+      good: { src: string; label: string };
+      bad: { src: string; label: string };
     }
   | {
       type: "flow";
@@ -69,6 +83,20 @@ export type ContentSection =
       image: string;
       caption?: string;
       markers?: { label: string; detail?: string }[];
+    }
+  | {
+      type: "annotatedImage";
+      title?: string;
+      src: string;
+      alt: string;
+      caption?: string;
+      annotations: { x: number; y: number; label: string; description: string }[];
+    }
+  | {
+      type: "conceptDiagram";
+      diagramType: "hierarchy" | "comparison" | "scatter";
+      title: string;
+      data: any;
     };
 
 export type Module = {
@@ -83,11 +111,13 @@ export type Module = {
 
 export type QuizQuestion = {
   id: string;
-  type: "multiple_choice" | "scenario";
+  type: "multiple_choice" | "scenario" | "image_based";
   question: string;
+  image_url?: string;
   options: string[];
   answer: string;
   rationale?: string;
+  difficulty?: "easy" | "medium" | "hard";
 };
 
 export type Quiz = {

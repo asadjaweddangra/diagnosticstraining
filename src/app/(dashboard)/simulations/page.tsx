@@ -5,6 +5,7 @@ import { Flame, ShieldAlert, Stethoscope, Zap } from "lucide-react";
 import { ultrasoundChapters } from "@/data/ultrasound-chapters";
 import { echoChapters } from "@/data/echo-chapters";
 import { ekgChapters } from "@/data/ekg-chapters";
+import { InteractiveSimulation } from "@/components/training/interactive-simulation";
 
 const drills = [
   ...ultrasoundChapters
@@ -43,6 +44,29 @@ export default function SimulationsPage() {
         </div>
       </div>
 
+      <InteractiveSimulation
+        title="RUQ pain ultrasound optimization"
+        scenario="You have shadowing and gas obscuring the gallbladder on a bariatric patient."
+        steps={[
+          {
+            prompt: "First move?",
+            choices: [
+              { label: "Crank up overall gain", correct: false, rationale: "Gain alone won’t overcome gas/rib shadow." },
+              { label: "Roll patient to LLD and use intercostal window", correct: true, rationale: "Change window/position first." },
+              { label: "Switch to linear probe", correct: false, rationale: "Penetration too low for RUQ depth." },
+            ],
+          },
+          {
+            prompt: "Still limited after repositioning. Next best action?",
+            choices: [
+              { label: "Lower frequency / harmonics on curved probe", correct: true, rationale: "Increase penetration after window change." },
+              { label: "Increase depth to max", correct: false, rationale: "Depth alone reduces frame rate and may not help." },
+              { label: "Stop exam immediately", correct: false, rationale: "Try optimization ladder before stopping." },
+            ],
+          },
+        ]}
+      />
+
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {drills.map((d, idx) => (
           <Link
@@ -73,4 +97,5 @@ export default function SimulationsPage() {
     </div>
   );
 }
+
 

@@ -10,8 +10,8 @@ export default function EkgTrackPage() {
       <JourneyHeader
         track="ekg"
         chapter={1}
-        total={6}
-        duration="~90 min total"
+        total={ekgChapters.length}
+        duration="~2 hrs total"
         xp={ekgChapters.reduce((sum, c) => sum + c.xp, 0)}
         title="EKG Excellence Track"
         summary="Lead placement mastery, artifact detective work, and rapid escalation of dangerous rhythms."
@@ -26,7 +26,7 @@ export default function EkgTrackPage() {
           >
             <div className="flex items-center justify-between text-xs text-ink/70">
               <span className="rounded-full bg-amber-500/10 px-3 py-1 text-amber-100">
-                Chapter {chapter.chapter}/{chapter.total}
+                Chapter {chapter.chapter}/{ekgChapters.length}
               </span>
               <span>{chapter.duration} • +{chapter.xp} XP</span>
             </div>

@@ -5,6 +5,7 @@ import { MarkComplete } from "@/components/learning/mark-complete";
 import Link from "next/link";
 import { ArrowRight, ArrowLeft, BookOpen } from "lucide-react";
 import { getModules } from "@/lib/supabase/queries";
+import { BookmarkButton } from "@/components/learning/bookmark-button";
 
 type Props = {
   params: { id: string };
@@ -37,6 +38,7 @@ export default async function ModuleDetailPage({ params }: Props) {
             <p className="text-sm text-ink/70">{moduleData?.description}</p>
             <div className="flex flex-wrap gap-2">
               <MarkComplete moduleId={moduleData!.id} />
+              <BookmarkButton item={{ title: moduleData.title, href: `/modules/${moduleData.id}`, track: moduleData.modality ?? "common" }} />
               {moduleData?.modality ? (
                 <Link
                   href={`/${moduleData.modality}`}

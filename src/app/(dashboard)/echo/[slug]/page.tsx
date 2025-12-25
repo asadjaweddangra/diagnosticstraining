@@ -6,6 +6,7 @@ import { ContentRenderer } from "@/components/learning/content-renderer";
 import { SimulatorDrill } from "@/components/training/simulator-drill";
 import { QuickReference } from "@/components/training/quick-reference";
 import { XPCounter } from "@/components/training/xp-counter";
+import { BookmarkButton } from "@/components/learning/bookmark-button";
 
 type Props = { params: { slug: string } };
 
@@ -18,7 +19,7 @@ export default function EchoChapterPage({ params }: Props) {
       <JourneyHeader
         track="echo"
         chapter={chapter.chapter}
-        total={chapter.total}
+        total={echoChapters.length}
         duration={chapter.duration}
         xp={chapter.xp}
         title={chapter.title}
@@ -28,6 +29,9 @@ export default function EchoChapterPage({ params }: Props) {
       <div className="grid gap-4 md:grid-cols-[2fr,1fr]">
         <div className="space-y-4">
           <StoryCard title="Your clinical moment" body={chapter.story} tone="echo" />
+          <div className="flex justify-end">
+            <BookmarkButton item={{ title: chapter.title, href: `/echo/${chapter.slug}`, track: "echo" }} />
+          </div>
           <div className="glass-panel p-4">
             <h3 className="text-sm font-semibold text-ink">Learning objectives</h3>
             <ul className="mt-2 space-y-1 text-sm text-ink/80">
@@ -64,4 +68,5 @@ export default function EchoChapterPage({ params }: Props) {
     </div>
   );
 }
+
 

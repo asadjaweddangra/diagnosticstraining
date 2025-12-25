@@ -10,8 +10,8 @@ export default function EchoTrackPage() {
       <JourneyHeader
         track="echo"
         chapter={1}
-        total={7}
-        duration="~2 hrs total"
+        total={echoChapters.length}
+        duration="~2.5 hrs total"
         xp={echoChapters.reduce((sum, c) => sum + c.xp, 0)}
         title="Echo Essentials Track"
         summary="Focused cardiac windows, positioning, and escalation. Build a reliable sequence for every patient."
@@ -26,7 +26,7 @@ export default function EchoTrackPage() {
           >
             <div className="flex items-center justify-between text-xs text-ink/70">
               <span className="rounded-full bg-rose-500/10 px-3 py-1 text-rose-100">
-                Chapter {chapter.chapter}/{chapter.total}
+                Chapter {chapter.chapter}/{echoChapters.length}
               </span>
               <span>{chapter.duration} • +{chapter.xp} XP</span>
             </div>
@@ -48,4 +48,5 @@ export default function EchoTrackPage() {
     </div>
   );
 }
+
 

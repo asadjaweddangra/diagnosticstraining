@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Quiz, QuizQuestion } from "@/types";
 import { cn } from "@/lib/utils/cn";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
+import Image from "next/image";
 
 type Props = {
   quiz: Quiz;
@@ -86,6 +87,11 @@ export function QuizEngine({ quiz }: Props) {
             Question {current + 1} of {questions.length}
           </p>
         </div>
+        {currentQuestion?.difficulty ? (
+          <span className="rounded-full bg-primary-500/10 px-3 py-1 text-xs font-semibold uppercase text-primary-100 ring-1 ring-primary-500/20">
+            {currentQuestion.difficulty}
+          </span>
+        ) : null}
         {score !== null ? (
           <div
             className={cn(
@@ -101,9 +107,12 @@ export function QuizEngine({ quiz }: Props) {
       </div>
 
       <div className="rounded-2xl bg-white/80 p-4 shadow ring-1 ring-slate-200">
-        <h3 className="text-base font-semibold text-slate-900">
-          {currentQuestion?.question}
-        </h3>
+        <h3 className="text-base font-semibold text-slate-900">{currentQuestion?.question}</h3>
+        {currentQuestion?.image_url ? (
+          <div className="relative mt-3 h-56 w-full overflow-hidden rounded-xl ring-1 ring-slate-200">
+            <Image src={currentQuestion.image_url} alt="Question reference" fill sizes="100vw" className="object-cover" />
+          </div>
+        ) : null}
         <div className="mt-3 space-y-2">
           {shuffledOptions.map((option) => {
             const chosen = answers[currentQuestion.id] === option;

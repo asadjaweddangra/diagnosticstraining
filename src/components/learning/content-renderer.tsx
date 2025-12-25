@@ -8,6 +8,10 @@ import { DecisionTree } from "./decision-tree";
 import { Checklist } from "./checklist";
 import { AnatomyViewer } from "./anatomy-viewer";
 import { ImageGallery } from "./image-gallery";
+import { AnnotatedImage } from "./annotated-image";
+import { ConceptDiagram } from "./concept-diagram";
+import { ComparisonSlider } from "../training/comparison-slider";
+import Image from "next/image";
 
 export function ContentRenderer({
   content,
@@ -54,11 +58,12 @@ export function ContentRenderer({
               {"image" in section && section.image ? (
                 <figure className="mt-3 space-y-2 rounded-xl bg-white/5 p-3 ring-1 ring-white/10">
                   <div className="relative h-48 w-full overflow-hidden rounded-lg">
-                    <img
+                    <Image
                       src={section.image}
                       alt={section.caption || section.title || "Illustration"}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
+                      fill
+                      sizes="100vw"
+                      className="object-cover"
                     />
                   </div>
                   {section.caption ? <figcaption className="text-xs text-ink/60">{section.caption}</figcaption> : null}
@@ -93,6 +98,19 @@ export function ContentRenderer({
 
           {section.type === "anatomy" ? (
             <AnatomyViewer title={section.title} image={section.image} caption={section.caption} markers={section.markers} />
+          ) : null}
+
+          {section.type === "annotatedImage" ? (
+            <AnnotatedImage title={section.title} src={section.src} alt={section.alt} caption={section.caption} annotations={section.annotations} />
+          ) : null}
+
+          {section.type === "conceptDiagram" ? <ConceptDiagram section={section} /> : null}
+
+          {section.type === "comparisonSlider" ? (
+            <div className="space-y-2">
+              {section.title ? <h3 className="text-sm font-semibold text-ink">{section.title}</h3> : null}
+              <ComparisonSlider good={section.good} bad={section.bad} />
+            </div>
           ) : null}
         </div>
       ))}
