@@ -11,23 +11,25 @@ export function SkillBadge({
 }) {
   const toneClass =
     tone === "ultrasound"
-      ? "bg-cyan-500/10 text-cyan-100 border-cyan-500/30"
+      ? "bg-cyan-50 text-cyan-900 border-cyan-200"
       : tone === "echo"
-        ? "bg-rose-500/10 text-rose-100 border-rose-500/30"
+        ? "bg-rose-50 text-rose-900 border-rose-200"
         : tone === "ekg"
-          ? "bg-amber-500/10 text-amber-100 border-amber-500/30"
-          : "bg-white/5 text-ink border-white/10";
+          ? "bg-amber-50 text-amber-900 border-amber-200"
+          : "bg-gray-50 text-gray-900 border-gray-200";
 
   return (
     <div
       className={cn(
-        "rounded-2xl border px-4 py-3 shadow-sm backdrop-blur transition hover:-translate-y-0.5",
+        "rounded-xl border px-4 py-3 shadow-sm transition hover:-translate-y-0.5",
         toneClass
       )}
     >
       <p className="text-sm font-semibold">{title}</p>
-      <p className="text-xs text-white/70">{description}</p>
+      <p className="text-xs text-gray-600">{description}</p>
     </div>
   );
 }
+
+
 

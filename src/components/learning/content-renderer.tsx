@@ -25,20 +25,20 @@ export function ContentRenderer({
   return (
     <div className="space-y-4">
       {sections.map((section, idx) => (
-        <div key={idx} className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+        <div key={idx} className="rounded-xl bg-white border border-gray-200 p-4 shadow-sm">
           {(!section.type || section.type === "list") && (
             <div>
-              {section.title ? <h3 className="text-sm font-semibold text-ink">{section.title}</h3> : null}
-              {section.body ? <p className="mt-1 whitespace-pre-line text-sm text-ink/80">{section.body}</p> : null}
+              {section.title ? <h3 className="text-sm font-semibold text-gray-900">{section.title}</h3> : null}
+              {section.body ? <p className="mt-1 whitespace-pre-line text-sm text-gray-700">{section.body}</p> : null}
               {section.items ? (
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink/80">
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
                   {section.items.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
               ) : null}
               {section.callout ? (
-                <div className="mt-3 rounded-xl bg-primary-500/10 px-3 py-2 text-sm text-primary-100">{section.callout}</div>
+                <div className="mt-3 rounded-lg bg-primary-50 border border-primary-200 px-3 py-2 text-sm text-primary-900">{section.callout}</div>
               ) : null}
               {section.links ? (
                 <div className="mt-3 space-y-1">
@@ -48,7 +48,7 @@ export function ContentRenderer({
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm font-semibold text-primary-200 hover:underline"
+                      className="text-sm font-semibold text-primary-600 hover:text-primary-700 hover:underline"
                     >
                       {link.label}
                     </a>
@@ -56,7 +56,7 @@ export function ContentRenderer({
                 </div>
               ) : null}
               {"image" in section && section.image ? (
-                <figure className="mt-3 space-y-2 rounded-xl bg-white/5 p-3 ring-1 ring-white/10">
+                <figure className="mt-3 space-y-2 rounded-lg bg-gray-50 p-3 border border-gray-200">
                   <div className="relative h-48 w-full overflow-hidden rounded-lg">
                     <Image
                       src={section.image}
@@ -66,7 +66,7 @@ export function ContentRenderer({
                       className="object-cover"
                     />
                   </div>
-                  {section.caption ? <figcaption className="text-xs text-ink/60">{section.caption}</figcaption> : null}
+                  {section.caption ? <figcaption className="text-xs text-gray-500">{section.caption}</figcaption> : null}
                 </figure>
               ) : null}
             </div>
@@ -108,7 +108,7 @@ export function ContentRenderer({
 
           {section.type === "comparisonSlider" ? (
             <div className="space-y-2">
-              {section.title ? <h3 className="text-sm font-semibold text-ink">{section.title}</h3> : null}
+              {section.title ? <h3 className="text-sm font-semibold text-gray-900">{section.title}</h3> : null}
               <ComparisonSlider good={section.good} bad={section.bad} />
             </div>
           ) : null}

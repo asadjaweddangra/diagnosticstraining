@@ -4,40 +4,48 @@ import { Module } from "@/types";
 import { cn } from "@/lib/utils/cn";
 
 const tone: Record<string, string> = {
-  ultrasound: "bg-emerald-50 text-emerald-700",
-  echo: "bg-amber-50 text-amber-700",
-  ekg: "bg-rose-50 text-rose-700",
-  common: "bg-slate-100 text-slate-700",
+  ultrasound: "bg-cyan-50 text-cyan-700",
+  echo: "bg-rose-50 text-rose-700",
+  ekg: "bg-amber-50 text-amber-700",
+  common: "bg-gray-100 text-gray-700",
 };
 
 export function ModuleCard({ module }: { module: Module }) {
   return (
     <Link
       href={`/modules/${module.id}`}
-      className="group flex flex-col gap-2 rounded-2xl bg-white/80 p-4 shadow ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-lg"
+      className="group flex flex-col gap-3 rounded-xl bg-white border border-gray-200 p-5 shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
     >
-      <div className="flex items-center justify-between">
-        <h3 className="text-base font-semibold text-slate-900">
-          {module.title}
-        </h3>
-        {module.modality ? (
-          <span
-            className={cn(
-              "rounded-full px-3 py-1 text-xs font-semibold",
-              tone[module.modality] || tone.common
-            )}
-          >
-            {module.modality.toUpperCase()}
-          </span>
-        ) : null}
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex-1">
+          {module.modality ? (
+            <span
+              className={cn(
+                "inline-block rounded-full px-2 py-1 text-xs font-semibold mb-2",
+                tone[module.modality] || tone.common
+              )}
+            >
+              {module.modality.toUpperCase()}
+            </span>
+          ) : null}
+          <h3 className="text-base font-semibold text-gray-900 mb-1">
+            {module.title}
+          </h3>
+        </div>
         {module.estimated_duration ? (
-          <span className="flex items-center gap-1 text-xs text-slate-500">
+          <span className="flex items-center gap-1 text-xs text-gray-500 whitespace-nowrap">
             <Clock3 size={14} />
             {module.estimated_duration} min
           </span>
         ) : null}
       </div>
-      <p className="text-sm text-slate-600">{module.description}</p>
+      <p className="text-sm text-gray-600 line-clamp-2">{module.description}</p>
+      <div className="flex items-center justify-between pt-2">
+        <span className="text-xs text-gray-500">Not started</span>
+        <span className="text-sm font-semibold text-primary-600 group-hover:text-primary-700">
+          Start →
+        </span>
+      </div>
     </Link>
   );
 }

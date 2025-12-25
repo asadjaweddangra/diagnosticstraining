@@ -9,8 +9,8 @@ export function BookmarkButton({ item }: { item: Bookmark }) {
   return (
     <button
       onClick={() => toggle(item)}
-      className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold ring-1 transition ${
-        active ? "bg-primary-500/15 text-primary-100 ring-primary-500/30" : "bg-white/5 text-ink ring-white/10"
+      className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold border transition ${
+        active ? "bg-primary-50 text-primary-700 border-primary-200" : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
       }`}
     >
       {active ? <BookmarkMinus size={14} /> : <BookmarkPlus size={14} />}
@@ -18,4 +18,6 @@ export function BookmarkButton({ item }: { item: Bookmark }) {
     </button>
   );
 }
+
+
 

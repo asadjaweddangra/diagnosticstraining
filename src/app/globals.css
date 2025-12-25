@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
   @apply bg-soft-gradient text-ink antialiased;
   font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: #f8fafc;
 }
 
 h1,
@@ -21,11 +22,11 @@ h4,
 }
 
 a {
-  @apply text-primary-300 hover:text-primary-200 transition-colors;
+  @apply text-primary-600 hover:text-primary-700 transition-colors;
 }
 
 .glass-panel {
-  @apply rounded-3xl bg-white/5 backdrop-blur border border-white/10 shadow-lg;
+  @apply rounded-3xl bg-white border border-gray-200 shadow-sm;
 }
 
 @layer utilities {

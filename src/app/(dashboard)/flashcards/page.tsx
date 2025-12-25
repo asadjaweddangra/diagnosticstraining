@@ -18,23 +18,23 @@ export default function FlashcardsPage() {
 
   return (
     <div className="space-y-4">
-      <div className="glass-panel p-6">
-        <h1 className="text-xl font-bold text-ink">Flashcards</h1>
-        <p className="text-sm text-ink/70">
+      <div className="rounded-xl bg-white border border-gray-200 shadow-sm p-6">
+        <h1 className="text-xl font-bold text-gray-900">Flashcards</h1>
+        <p className="text-sm text-gray-600">
           Rapid recall for physics, anatomy, echo views, EKG placement, and safety—tap to show answer; next/prev for spaced repetition.
         </p>
       </div>
 
-      <div className="glass-panel p-4">
+      <div className="rounded-xl bg-white border border-gray-200 shadow-sm p-4">
         <div className="flex flex-wrap gap-2">
           {decks.map((d) => (
             <button
               key={d.key}
               onClick={() => setActive(d.key)}
-              className={`rounded-xl px-3 py-2 text-sm font-semibold ring-1 transition ${
+              className={`rounded-lg px-3 py-2 text-sm font-semibold border transition ${
                 active === d.key
-                  ? "bg-primary-500/15 text-primary-100 ring-primary-500/30"
-                  : "bg-white/5 text-ink ring-white/10"
+                  ? "bg-primary-500 text-white border-primary-600"
+                  : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
               }`}
             >
               {d.label}

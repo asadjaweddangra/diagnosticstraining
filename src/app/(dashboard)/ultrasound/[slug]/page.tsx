@@ -32,12 +32,12 @@ export default function UltrasoundChapterPage({ params }: Props) {
           <div className="flex justify-end">
             <BookmarkButton item={{ title: chapter.title, href: `/ultrasound/${chapter.slug}`, track: "ultrasound" }} />
           </div>
-          <div className="glass-panel p-4">
-            <h3 className="text-sm font-semibold text-ink">Learning objectives</h3>
-            <ul className="mt-2 space-y-1 text-sm text-ink/80">
+          <div className="rounded-xl bg-white border border-gray-200 shadow-sm p-4">
+            <h3 className="text-sm font-semibold text-gray-900">Learning objectives</h3>
+            <ul className="mt-2 space-y-1 text-sm text-gray-700">
               {chapter.objectives.map((obj) => (
                 <li key={obj} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-500" />
                   <span>{obj}</span>
                 </li>
               ))}
